@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>后代选择器</title>
+    <style>
+    div p{
+      color:yellow;
+    }
+    .py div p{
+      color:red;
+    }
+    #py div p{
+      color:green;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>hello</p>
+      <div>
+        <p>hello</p>
+      </div>
+      <h1>
+        <p>hello</p>
+      </h1>
+    </div>
+    <p>hello</p>
+
+    <div id="py">
+      <p>hello</p>
+    </div>
+
+    <h1 class="py">
+      <div>
+        <p>hello</p>
+      </div>
+
+    </h1>
+  </body>
+</html>
