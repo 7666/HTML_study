@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>京东</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .xin{
+        width:1200px;
+        margin:0 auto;
+      }
+      .clearfix::after, .clearfix::before {
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        line-height: 0;
+        clear: both;
+      }
+      .back{
+        background-color: #190400;
+        height:80px;
+      }
+      .back .top-img{
+        margin: 0 auto;
+      }
+      .shortcut{
+        height: 30px;
+        background: #e3e4e5;
+      }
+      #logo{
+        background-color: white;
+        width:190px;
+        box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+        float:left;
+      }
+      .logo {
+        background: url(./logo.png);
+        width: 190px;
+        height: 170px;
+      }
+      .logo a{
+        display: block;
+        width: 190px;
+        height: 170px;
+        color:white;
+      }
+      #place{
+        float:left;
+        margin-left: 30px;
+      }
+      .right_top{
+        height:35px;
+        position:relative;
+      }
+      .right_top ul{
+        float:right;
+      }
+      .right_top ul li{
+        float:right;
+        list-style: none;
+        padding: 6px 8px;
+        font-size:12px;
+
+      }
+      .right_top a{
+        border-left: solid 1px;
+        padding-left: 10px;
+        text-decoration: none;
+      }
+      .right a:link{
+        color:#999;
+      }
+      .right a:visited{
+        color:#999;
+      }
+      .right a:hover{
+        color:#c81623;
+      }
+      #erweima{
+        position:absolute;
+        top:30px;
+      }
+      .right_middle{
+        height:60px;
+      }
+      .right_middle input,.right_middle img{
+        float:left;
+        margin-top: 21px;
+
+      }
+      .right_middle input{
+        margin-left: 80px;
+      }
+      .car{
+        float:right;
+        margin-right: 150px;
+        margin-top: 22px;
+        padding: 3px 55px;
+        border: 1px solid #e3e4e5;
+        position:relative;
+      }
+      .car img{
+        position:absolute;
+        top:-20px;
+        right: 30px;
+      }
+      .search_bottom{
+        float:left;
+        width: 930px;
+        margin-left: 80px;
+      }
+      .search_bottom li{
+        float: left;
+        list-style: none;
+        padding-right: 10px;
+        color: #999;
+        font-size: 12px;
+      }
+      .search_bottom a{
+        text-decoration: none;
+      }
+      .search_nav{
+        margin: 30px 0;
+        height: 15px;
+      }
+      .x1{
+        height: 40px;
+        width: 750px;
+        float: left;
+      }
+      .x1 li{
+        list-style: none;
+        float: left;
+      }
+      .x2{
+        background: url(./010.jpg);
+        float: right;
+        width: 190px;
+        height: 40px;
+      }
+      .x1 li a{
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        text-decoration: none;
+        padding-left: 38px;
+        font-weight: bold;
+      }
+      .x1 li a:link{
+        color: #555;
+      }
+      .x1 li a:visited{
+        color: #555;
+      }
+      .x1 li a:hover{
+        color: #c81623;
+      }
+      .nav{
+      }
+      .nav-1{
+        background-color: #6e6568;
+        float: left;
+        height: 460px;
+        width: 170px;
+        padding: 10px 10px;
+
+      }
+      .nav-1 ul li{
+        list-style: none;
+        color: white;
+        margin-bottom: 5px;
+      }
+      .nav-1 ul li a{
+        text-decoration: none;
+      }
+      .nav-1 ul li a:link{
+        color: #fff;
+      }
+      .nav-1 ul li a:visited{
+        color: #fff;
+      }
+      .nav-1 ul li a:hover{
+        color: #c81623;
+      }
+      .nav-2{
+        float: left;
+      }
+      .nav-2-1{
+        background: url(./bg.jpg);
+        height: 340px;
+        width: 790px;
+        float: left;
+        margin-left:16px;
+      }
+      .nav-2-2-1{
+        float: left;
+        background: url(./1.jpg);
+        width: 390px;
+        height: 130px;
+        margin-left:16px;
+        margin-top: 10px;
+      }
+      .nav-2-2-2{
+        float: left;
+        background: url(./2.jpg);
+        width: 390px;
+        height: 130px;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      .nav-3{
+        background: #f6f6f6;
+        width:190px;
+        height: 480px;
+        float: right;
+      }
+      .nav-3-1{
+        height:110px;
+      }
+      .nav-3-1-1{
+        height: 73px;
+      }
+      .nav-3-1-1 a{
+        font-size: 12px;
+        float:left;
+        margin-left: 10px;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      .nav-3-1-1 a:visited{
+        color: #666;
+      }
+      .nav-3-1-1 a:hover{
+        color:#c81623;
+      }
+      .nav-3-2-1{
+        height:20px;
+        border-top:solid white 1px;
+        border-bottom: solid white 1px;
+      }
+      .nav-3-2-1 a{
+        float: left;
+        margin-left: 12px;
+        font-size: 12px;
+      }
+      .nav-3-2-1 p{
+        float: right;
+        font-size: 12px;
+        margin-right: 20px;
+      }
+      .nav-3-2 li{
+        font-size: 12px;
+        color:#666;
+        list-style: none;
+        margin:15px 12px;
+      }
+      .nav-3-3 td{
+        border:solid white 1px;
+        height: 63px;
+        width: 45px;
+        font-size: 12px;
+        position: relative;
+      }
+      .nav-3-3 td a{
+        position: absolute;
+        top: 41px;
+        right: 7px;
+        text-decoration: none;
+      }
+      .nav-3-3 td a:visited{
+        color: #666;
+      }
+      .nav-3-3 td a:hover{
+        color: red;
+      }
+      #n1{
+        background: url(./jingling.png) 9px -69px no-repeat;
+      }
+      #n2{
+        background: url(./jingling.png) 9px -26px no-repeat;
+
+      }
+      #n3{
+        background: url(./jingling.png) -79px -25px no-repeat;}
+      #n4{
+        background: url(./jingling.png) -79px 17px no-repeat;}
+      #n5{
+        background: url(./jingling.png) -34px -70px no-repeat;}
+      #n6{
+        background: url(./jingling.png) 7px 18px no-repeat;}
+      #n7{
+        background: url(./jingling.png) -33px -27px no-repeat;}
+      #n8{
+        background: url(./jingling.png) -81px -69px no-repeat;}
+      #n9{
+        background: url(./jingling.png) -123px 18px no-repeat;}
+      #n10{
+        background: url(./jingling.png) -123px -27px no-repeat;}
+      #n11{
+        background: url(./jingling.png) -123px -69px no-repeat;}
+      #n12{
+        background: url(./jingling.png) -33px 15px no-repeat;}
+      .nav-3-2-1 a {
+        text-decoration: none;
+      }
+      .nav-3-2-1 a:visited {
+        color: #666;
+      }
+      .nav-3-2-1 p{
+        color: #666;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="back">
+      <div class="xin">
+        <img src="jd-top.jpg" alt="">
+      </div>
+
+    </div>
+    <div class="shortcut">
+      <div class="xin">
+        <div class="search">
+          <div id="logo">
+            <div class="logo">
+              <a href="#">京东</a>
+            </div>
+          </div>
+          <div class="right">
+            <div class="right_top">
+              <p id="place" style="font-size:12px;margin-top:6px;color:#999;">北京</p>
+              <img src="./008.png" alt="" style="position:absolute;top:1px;left:199px;">
+              <ul>
+                <li><a href="#" style="position:relative;">手机京东</a>
+                  <img  id="erweima" src="./005.png" alt="">
+
+                </li>
+                <li><a href="#">网站导航</a></li>
+                <li><a href="#">客户服务</a></li>
+                <li><a href="#">企业采购</a></li>
+                <li><a href="#">京东会员</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">我的京东</a></li>
+                <li><a href="#" style="color:red;border:none;">免费注册</a></li>
+                <li><a href="#" style="border:none;">你好,请登录</a></li>
+              </ul>
+
+            </div>
+            <div class="right_middle">
+              <input type="text" name="" value="" style="width:500px;height:32px;border:solid #f10215 1px;">
+              <img src="./006.png" alt="">
+              <div class="car">
+                <p style="color:red">我的购物车</p>
+                <img src="./007.png" alt="">
+              </div>
+            </div>
+            <div class="search_bottom">
+              <ul>
+                <li><a href="#">一元秒电脑</a></li>
+                <li><a href="#">满7减6</a></li>
+                <li><a href="#">农资周年庆</a></li>
+                <li><a href="#">七夕钜惠</a></li>
+                <li><a href="#">低至五折</a></li>
+                <li><a href="#">小太阳</a></li>
+              </ul>
+            </div>
+            <div class="search_nav">
+              <div class="x1">
+                <ul>
+                  <li><a href="#">秒杀</a></li>
+                  <li><a href="#">优惠券</a></li>
+                  <li><a href="#">闪购</a></li>
+                  <li><a href="#">拍卖</a></li>
+                  <li><a href="#">服装城</a></li>
+                  <li><a href="#">京东超市</a></li>
+                  <li><a href="#">生鲜</a></li>
+                  <li><a href="#">全球购</a></li>
+                  <li><a href="#">京东金融</a></li>
+                </ul>
+              </div>
+              <div class="x2">
+
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="nav">
+          <div class="nav-1">
+            <ul>
+              <li><a href="#">家用电器</a></li>
+              <li><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></li>
+              <li><a href="#">电脑</a>/<a href="#">办公</a></li>
+              <li><a href="#">家居</a>/<a href="#">家具</a>/<a href="#">家装</a>/<a href="#">厨具</a></li>
+              <li><a href="#">男装</a>/<a href="#">女装</a>/<a href="#">童装</a>/<a href="#">内衣</a></li>
+              <li><a href="#">美妆个性</a>/<a href="#">宠物</a></li>
+              <li><a href="#">女鞋</a>/<a href="#">箱包</a>/<a href="#">钟表</a>/<a href="#">珠宝</a></li>
+              <li><a href="#">男鞋</a>/<a href="#">运动</a>/<a href="#">户外</a></li>
+              <li><a href="#">汽车</a>/<a href="#">汽车用品</a></li>
+              <li><a href="#">母婴</a>/<a href="#">玩具乐器</a></li>
+              <li><a href="#">食品</a>/<a href="#">酒类</a>/<a href="#">生鲜</a>/<a href="#">特产</a></li>
+              <li><a href="#">礼品鲜花</a>/<a href="#">农资绿植</a></li>
+              <li><a href="#">医药保健</a>/<a href="#">计生情趣</a></li>
+              <li><a href="#">图书</a>/<a href="#">音响</a>/<a href="#">电子书</a></li>
+              <li><a href="#">机票</a>/<a href="#">酒店</a>/<a href="#">旅游</a>/<a href="#">生活</a></li>
+              <li><a href="#">理财</a>/<a href="#">众筹</a>/<a href="#">白条</a>/<a href="#">保险</a></li>
+            </ul>
+
+          </div>
+          <div class="nav-2">
+            <div class="nav-2-1">
+
+
+            </div>
+            <div class="nav-2-2">
+              <div class="nav-2-2-1">
+
+              </div>
+              <div class="nav-2-2-2">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-3">
+            <div class="nav-3-1">
+              <div class="nav-3-1-1" >
+                <img src="./009.png" alt="" style="float:left;margin:10px 10px;">
+                <p style="color:#666;font-size:12px;margin-top:10px;float:right;margin-right:10px;margin-top:10px;">Hi!欢迎来到京东!</p>
+                <a href="#">登录</a>  <a href="#">注册</a>
+              </div>
+              <a href="#" style="text-decoration:none;color:red;margin:7px;border:solid red;font-size:12px;padding:4px 13px;">新人福利</a>
+              <a href="#" style="text-decoration:none;color:red;border:solid red;font-size:12px;padding:4px 13px;">PLUS会员</a>
+
+
+            </div>
+            <div class="nav-3-2">
+              <div class="nav-3-2-1">
+                <a href="#" style="border-right:solid white 1px;">促销</a>
+                <a href="#">公告</a>
+                <p>更多</p>
+
+              </div>
+              <ul>
+                <li>疯狂星期五</li>
+                <li>七夕购鲜花</li>
+                <li>虾蟹一锅</li>
+                <li>每日享折扣</li>
+              </ul>
+
+
+            </div>
+            <div class="nav-3-3">
+              <table>
+                <tr>
+                  <td id="n1"><a href="#">话费</a></td>
+                  <td id="n2"><a href="#">机票</a></td>
+                  <td id="n3"><a href="#">酒店</a></td>
+                  <td id="n4"><a href="#">游戏</a></td>
+                </tr>
+                <tr>
+                  <td id="n5"><a href="#">企业购</a></td>
+                  <td id="n6"><a href="#">加油卡</a></td>
+                  <td id="n7"><a href="#">电影票</a></td>
+                  <td id="n8"><a href="#">火车票</a></td>
+                </tr>
+                <tr>
+                  <td id="n9"><a href="#">众筹</a></td>
+                  <td id="n10"><a href="#">理财</a></td>
+                  <td id="n11"><a href="#">礼品卡</a></td>
+                  <td id="n12"><a href="#">白条</a></td>
+                </tr>
+
+              </table>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
