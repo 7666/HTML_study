@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>z-index演示</title>
+    <style>
+      ul{
+        list-style: none;
+      }
+      li{
+        border: solid 2px red;
+        float:left;
+        width:50px;
+        height:50px;
+        margin-left:-2px;
+      }
+      li:hover{
+        border: solid 2px green;
+        /* z-index必须和static以外的其他定位一起使用,否则无效 */
+        position: relative;
+        /* 一行排列,从左到右,层级从0开始递增,最大值无限接近于1,所以这里只要为1,后面的层级就不会超过他*/
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+  </body>
+</html>

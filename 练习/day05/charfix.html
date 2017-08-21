@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>清除浮动</title>
+    <style>
+      .charfix::before,.charfix::after{
+        content:"";
+        clear: both;
+        display: block;
+      }
+      .two{
+        width:100px;
+        height:100px;
+        float:left;
+        background:red;
+        border:solid red 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 清除浮动只需要父元素在这里写上charfix这个类 -->
+    <div class="one charfix">
+    <!-- <div class="one"> -->
+      <div class="two">
+
+      </div>
+
+    </div>
+    <span>清除浮动演示</span>
+
+  </body>
+</html>

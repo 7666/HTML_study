@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>清除浮动</title>
+    <style>
+      .charfix::after,.charfix::before{
+        content:"";
+        height:0;
+        display: block;
+        visibility: hidden;
+        line-height: 0;
+        clear: both;
+      }
+      .x1{
+        float:left;
+        width:200px;
+        height:500px;
+        background-color: red;
+      }
+      .x2{
+        float:left;
+        width:200px;
+        height:500px;
+        background-color: blue;
+      }
+      .x3{
+        float: left;
+        width: 300px;
+        height: 500px;
+        background-color: green;
+      }
+      /*.x4{
+        width: 300px;
+        height: 1000px;
+        background-color: black;
+      }*/
+      .x5{
+        width: 300px;
+        height: 1000px;
+        background-color: #666;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="x charfix">
+      <div class="x1">
+
+      </div>
+      <div class="x2">
+
+      </div>
+      <div class="x3">
+
+      </div>
+      <div class="x4">
+
+      </div>
+      <!-- <span>hello</span>
+      <p>hello</p> -->
+    </div>
+    <!-- <p>hello</p>
+    <span>hello</span> -->
+    <div class="x5">
+
+    </div>
+
+  </body>
+</html>
