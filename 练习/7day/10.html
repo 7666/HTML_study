@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>添加删除</title>
+    <style>
+      table th{
+        border: solid 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class='add' type="button" name="button">添加</button>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>gender</th>
+        <th>age</th>
+        <td><button type="button" name="button">删除</button></td>
+      </tr>
+    </table>
+    <script src='./jquery.min.js'></script>
+    <script type="text/javascript">
+
+
+       $('.add').click(function(){
+        $("table").append("<tr><td>王</td><td>man</td><td>18</td><td><button type='button' name='button'>删除</button></td></tr>");
+        $('tr button').click(function(){
+          $(this).parent().parent().remove();
+        });
+      });
+
+    </script>
+  </body>
+</html>

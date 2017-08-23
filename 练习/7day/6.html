@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>鼠标事件</title>
+    <style media="screen">
+      .one{
+        height:500px;
+        width:500px;
+        background-color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+
+    </div>
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    $(".one").click(function(){
+      console.log("单击......");
+    });
+    //函数作为参数时，通常称该函数为回调函数(在将来的某个时刻会被执行)
+    /*
+    click内部的函数作为回调函数使用，又称为事件处理函数
+    此处只是注册了一个事件处理函数，并没有执行该函数。
+    */
+    /*
+    事件可以添加多个处理函数。
+    当触发事件的时候，处理函数的执行顺序是按照注册顺序来的
+    */
+    $(".one").dblclick(function(){
+      console.log("双击.......");
+    });
+    //双击事件触发,就会触发单击事件两次.
+    $(document).contextmenu(function(){
+      console.log("鼠标右击......");
+    });
+    //document代表整个页面,也就是说你在这个页面的任意位置右击就会触发函数.
+    // $(".one").mouseover(function(){
+    //   $(".one").css("background-color","blue");
+    // });//鼠标悬停事件
+    // $(".one").mouseout(function(){
+    //   $(".one").css("background-color","green");
+    // });//鼠标离开事件
+    //如果觉得上面太麻烦,可以使用hover
+    $(".one").hover(function(){
+      $(".one").css("background-color","blue");
+    },function(){
+      $(".one").css("background-color","green");
+    });//这个hover实现了mouseover和mouseout的双重效果.
+
+    </script>
+  </body>
+</html>

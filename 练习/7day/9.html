@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>谷歌按键</title>
+    <style media="screen">
+    *{
+      margin:0;
+      padding:0;
+    }
+    .one ul{
+      list-style: none;
+    }
+    .one ul li {
+      width: 120px;
+      text-align: center;
+    }
+    .one ul li:hover{
+      background-color: red;
+    }
+    </style>
+
+  </head>
+  <body>
+    <div class="one" style="border:1px solid #666666;background:#eeeeee;width:120px;padding:5px;display:none;position:absolute">
+      <ul>
+        <li>返回</li>
+        <li>前进</li>
+        <li>重新加载</li>
+        <li>另存为</li>
+        <li>查看源代码</li>
+        <li>检查</li>
+      </ul>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).contextmenu(function(){
+        $('.one').css({'left':event.pageX});
+        $('.one').css({'top':event.pageY});
+        $('.one').css('display','block');
+        return false;
+      });
+
+      $(document).click(function(){
+        $('.one').css('display','none');
+      });
+    </script>
+  </body>
+</html>

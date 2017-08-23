@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>替换</title>
+  </head>
+  <body>
+    <div class="one">
+      <p>hello</p>
+      <p>hi</p>
+      <p>china</p>
+    </div>
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // $(".one > p").replaceWith('<h1>hi</h1>');
+      $('<h2>hello</h2>').replaceAll('.one > p');
+      /*
+      这两个替换效果是一样的,就是把所有one下的p全部替换掉.
+      */
+    </script>
+  </body>
+</html>

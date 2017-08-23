@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>键盘按键事件</title>
+  </head>
+  <body>
+    <script src="./jquery.min.js"></script>
+    <script>
+      $(document).keydown(function(e){
+        console.log('按键按下.....'+ e.which);
+      });//document是整个页面
+      $(document).keypress(function(e){
+        console.log("按键按下------"+ e.which);
+      });//功能键不能识别
+      $(document).keyup(function(e){
+        console.log("按键弹起......"+ e.which);
+      });//e.which会显示按键的编码
+    </script>
+  </body>
+</html>
