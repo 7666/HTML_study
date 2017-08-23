@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>内部插入</title>
+  </head>
+  <body>
+    <div class="one">
+      <p>这是一个p标签</p>
+    </div>
+
+    <div class="two">
+      <p>这是第二个p标签</p>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+      $(".one").append("<span>这是一个span标签</span>");
+      $(".one").prepend("<h1>这是一个h1标签</h1>");
+
+      $("<h2>这是一个h2标签</h2>").appendTo(".two");
+      $("<h3>这是一个h3标签</h3>").prependTo(".two");
+      // $("<h2></h2>") 可以理解为创建一个元素
+      var newElement = $("<a href='https://baidu.com'>百度</a>");
+      newElement.appendTo(".two");
+      // 当然先创建一个对象,用对象插入也是支持的.其他的类似!
+    </script>
+
+  </body>
+</html>
