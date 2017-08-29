@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>表单</title>
+  </head>
+  <body>
+    <form action="" method="get" >
+      <input type="text" maxlength="20" > <br>
+      <!-- 单行文本输入框  其maxlength属性会导致其输入的最大字符数为20-->
+      <input type="password" value="123" > <br>
+      <!-- 密码输入框,其输入显示为圆点 value属性用来设置默认值-->
+      男<input type="radio" name="sex" value="1"> 女<input type="radio" name="sex" value="0"> <br>
+      <!-- 单选按钮 要想做到单选,必须让其name属性相同 这里填写value值,其不再是默认值,而是进行表单提交时,提交的值-->
+      课程:<input type="checkbox" name="yw">语文 <input type="checkbox" name="sx">数学 <br>
+      <!-- 复选框 -->
+      <input type="button" value="按钮"> <br>
+      <!-- 普通按钮,value属性为其设置显示名称 -->
+      <input type="reset" value="清空"> <br>
+      <!-- 重置按钮,让整个表单清空,value属性其设置显示名称 -->
+      这有个隐藏域--><input type="hidden"> <br>
+      <!-- 隐藏域 -->
+      <input type="file" multiple accept="image/*"> <br>
+      <!-- 文件域,供上传文件使用 multiple这个属性是多选,可以允许提交多个文件  accept属性用于指定文件类型,只能上传图片 -->
+      <input type="submit"> <br>
+      <!-- 提交按钮,会让整个表单提交 -->
+      <input type="image" src="./timg.jpg"> <br>
+      <!-- 图片形式的提交 -->
+
+    </form>
+  </body>
+</html>

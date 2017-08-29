@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>改变表单控件样式</title>
+  </head>
+    <style>
+     *{
+       margin:0;
+       padding:0;
+     }
+      .one p{
+        position: absolute;
+        top:15px;
+        right: 33px;
+        color: white;
+      }
+      .one{
+        margin:0 auto;
+        background:#66ffff;
+        width:125px;
+        height:50px;
+        cursor: pointer;
+        position:relative;
+      }
+      .one input{
+        opacity: 0;
+        width:125px;
+        height:50px;
+        cursor: pointer;
+
+      }
+    </style>
+  <body>
+    <div class="one">
+      <p>upload file</p>
+      <input type="file" >
+    </div>
+
+  </body>
+</html>

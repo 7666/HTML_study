@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>京东注册</title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      .charfix::after{
+        content:'';
+        clear:both;
+        display:block;
+      }
+      .w{
+        width:1210px;
+        margin:0 auto;
+      }
+      .top{
+        height:110px;
+        background: url(./headbg.jpg) repeat-x left bottom;
+      }
+      #top .logo{
+        background:url(./icon.png) -5px 1px;
+        width:160px;
+        height:50px;
+        float:left;
+        margin-top:24px;
+      }
+      #top p:nth-of-type(1){
+        float:left;
+        font-size:24px;
+        padding-left:30px;
+        margin-top:34px;
+      }
+      #top a{
+        float:right;
+        font-size: 16px;
+        margin-top: 55px;
+        color:#333;
+        margin-left: 5px;
+      }
+      #top p:nth-of-type(2){
+        float:right;
+        font-size:16px;
+        margin-top: 55px;
+        color:#999;
+      }
+      .form{
+        width:400px;
+        height:570px;
+        float: left;
+      }
+      .middle{
+        margin:50px 190px;
+      }
+      .right{
+        border-left:solid 1px #e6e6e6;
+        float:left;
+        margin-left: 104px;
+        height: 605px;
+        padding-left: 90px;
+      }
+      .r1{
+        border-bottom: solid 1px #999;
+        padding-bottom: 30px;
+        width: 160px;
+        height: 30px;
+        position:relative;
+      }
+      #a1{
+        background:url(./icon.png) 0px -50px;
+        width: 30px;
+        height: 29px;
+        float: left;
+      }
+      .right a:nth-of-type(1){
+        float:left;
+        margin-top: 1px;
+
+      }
+      .r2{
+        padding-top: 30px;
+        width: 160px;
+        height: 30px;
+        position: relative;
+      }
+      #a2{
+        background: url(./icon.png) -50px -50px;
+        width: 30px;
+        height:30px;
+        float: left;
+      }
+      .r1 a{
+        position: absolute;
+        top:3px;
+        left: 42px;
+      }
+      .r2 a{
+        position: absolute;
+        top:34px;
+        left: 42px;
+        float: left;
+      }
+      input{
+        border:none;
+        height:46px;
+        width: 210px;
+        margin-left: 50px;
+        color:rgb(204, 204, 204);
+        outline:none;
+      }
+      .f1,.f2,.f3,.f4,.f5,.f6,.f7{
+        border:solid 1px #ddd;
+        width:370px;
+        height:50px;
+        padding-top: 3px;
+        padding-left: 30px;
+        position:relative;
+      }
+      .e1,.e2,.e3,.e4,.e5,.e6{
+        width:400px;
+        height: 32px;
+        color:rgb(204, 204, 204);
+        font-size:12px;
+      }
+      .f7{
+        padding: 0 0;
+        border: none;
+      }
+      .f7 button{
+        margin: 0 0;
+        width: 400px;
+        height: 52px;
+        background: #e22;
+        color: white;
+        font-size: 16px;
+        outline:none;
+        border:none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top charfix">
+      <div class='w'>
+        <div id="top">
+          <div class="logo">
+
+          </div>
+          <p>欢迎注册</p>
+          <a href="#">请登录</a>
+          <p>已有账号?</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="w">
+      <div class="middle">
+        <div class="form">
+          <div class="f1">
+            用户名<input type="text" name="username" placeholder="您的账户名和登录名">
+          </div>
+          <div class="e1">
+            <div style="display:none;">支持中文、字母、数字、“-”“_”的组合，4-20个字符</div>
+            <div style="display:none;color:red;">请输入用户名</div>
+          </div>
+          <div class="f2">
+            设置密码<input type="password" name="pw" placeholder="建议至少使用两种字符组合">
+          </div>
+          <div class="e2">
+            <div style="display:none">建议使用字母、数字和符号两种及以上的组合，6-20个字符</div>
+            <div style="display:none;color:red;">请输入密码</div>
+          </div>
+          <div class="f3">
+            确认密码<input type="password" name="pw2" placeholder="请再次输入密码">
+          </div>
+          <div class="e3">
+            <div style="display:none">请再次输入密码</div>
+            <div style="display:none;color:red;">请再次输入密码</div>
+            <div style="display:none;color:red;">两次输入的密码不同</div>
+          </div>
+          <div class="f4" style="padding-top:0px;height:55px;">
+            <span style="border-right:solid 1px rgb(204, 204, 204);height:55px;line-height:55px;display:inline-block;">中国&nbsp;0086</span><input type="text" name="phone" placeholder="建议使用常用手机">
+          </div>
+          <div class="e4">
+            <div style="display:none">完成验证后，你可以用该手机登录和找回密码</div>
+            <div style="display:none;color:red;">请输入手机号</div>
+          </div>
+          <div class="f5">
+            验&nbsp;证&nbsp;码<input type="text" name="pass" placeholder="请输入验证码">
+            <div style="width:110px;height:46px;position:absolute;right:2px;top:3px;"><img src="./image.jpg" alt="" width="110px" height="46px"></div>
+          </div>
+          <div class="e5">
+            <div style='display:none'>看不清？点击图片更换验证码</div>
+          </div>
+          <div class="f6">
+            手机验证码<input type="text" name="phonepass" placeholder="请输入手机验证码">
+          </div>
+          <div class="e6">
+
+          </div>
+          <div class='f7'>
+            <button type="button" name="button">立即注册</button>
+          </div>
+
+        </div>
+        <div class="right charfix">
+          <div class="r1 charfix">
+          <div id='a1'></div>
+          <a href="#" >企业用户注册</a>
+          </div>
+          <div class="r2">
+
+          <div id='a2'></div>
+            <a href="#" >INTERNATIONAL</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+     $('input').focus(function(){
+       $(this).parent().next().children().eq(2).css('display','none');
+       $(this).parent().next().children().eq(1).css('display','none');
+       $(this).parent().next().children().eq(0).css('display','block');
+       $(this).attr('placeholder','');
+     });
+     $('input').focusout(function(){
+       $(this).parent().next().children().eq(0).css('display','none');
+     });
+
+     $('.f1 input').focusout(function(){
+       $(this).attr('placeholder','您的账户名和登录名');
+     })
+     $('.f2 input').focusout(function(){
+       $(this).attr('placeholder','建议至少使用两种字符组合');
+     })
+     $('.f3 input').focusout(function(){
+       $(this).attr('placeholder','请再次输入密码');
+     })
+     $('.f4 input').focusout(function(){
+       $(this).attr('placeholder','建议使用常用手机');
+     })
+     $('.f5 input').focusout(function(){
+       $(this).attr('placeholder','请输入验证码');
+     })
+     $('.f6 input').focusout(function(){
+       $(this).attr('placeholder','请输入手机验证码');
+     })
+     $('[name=button]').click(function(){
+       var username = $('[name=username]').val()
+       var pw = $('[name=pw]').val()
+       var pw2 = $('[name=pw2]').val()
+       var phone = $('[name=phone]').val()
+       var pass = $('[name=pass]').val()
+       var phonepass = $('[name=phonepass]').val()
+       console.log(username);
+       if ((!username) || (username=="您的账户名和登录名")){
+          $('.e1 div:eq(1)').css('display','block');
+       return;
+       }
+       if ((!pw) || (pw=="建议至少使用两种字符组合")){
+       $('.e2 div:eq(1)').css('display','block');
+       return;
+       }
+       if ((!pw2) || (pw2=="请再次输入密码")){
+       $('.e3 div:eq(1)').css('display','block');
+       return;
+       }
+       if (pw != pw2){
+        $('.e3 div:eq(2)').css('display','block');
+        return;
+       }
+       if ((!phone) || (phone=="建议使用常用手机")){
+       $('.e4 div:eq(1)').css('display','block');
+       return;
+       }
+       if ((!pass) || (pass=="请输入验证码")){
+       $('.e5 div:eq(1)').css('display','block');
+       }
+       });
+    </script>
+
+  </body>
+</html>
