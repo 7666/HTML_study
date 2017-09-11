@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3lan</title>
+    <style media="screen">
+    *{border: 0;padding: 0;}
+      .clearfix::after,.clearfix::before{
+        content:'';
+        clear:both;
+        display:block;
+      }
+      .one{
+        display: flex;
+      }
+      .one div:nth-child(1){
+        width:100px;
+        height:200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        background: red;
+      }
+      .one div:nth-child(2){
+        height:200px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        background: blue;
+      }
+      .one div:nth-child(3){
+        width:100px;
+        height:200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        background: red;
+      }
+      .two{
+        margin-top: 100px;
+        position:relative;
+        width:100%;
+        height:200px;
+      }
+      .two div:nth-child(1){
+        position: absolute;
+        background: red;
+        height:200px;
+        width:100px;
+      }
+      .two div:nth-child(3){
+        position: absolute;
+        right:0px;
+        top:0px;
+        background: red;
+        height:200px;
+        width:100px;
+      }
+      .two div:nth-child(2){
+        background: blue;
+        position:absolute;
+        left:100px;
+        top:0px;
+        right:100px;
+        height:200px;
+      }
+      .there{
+        margin-top: 100px;
+        height:200px;
+        overflow: hidden;
+        position: relative;
+      }
+      .there div:nth-child(1){
+        /*float:left;*/
+        background: red;
+        width:100px;
+        height:200px;
+        position:absolute ;
+        left:0px;
+        top:0;
+      }
+      .there div:nth-child(2){
+        float:right;
+        background: red;
+        width:100px;
+        height:200px;
+      }
+      .there div:nth-child(3){
+        height:200px;
+        background: blue;
+        margin:0 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="two clearfix">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="there">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </body>
+</html>

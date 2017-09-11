@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>heart</title>
+    <style media="screen">
+      *{
+        border:0px;
+        padding: 0px;
+      }
+      .body{
+        background: lightgreen;
+      }
+      .heart{
+        width:500px;
+        margin:300px auto;
+        position:relative;
+        animation: run 1s linear alternate infinite;
+      }
+      .yuan{
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        background: pink;
+        box-shadow: 150px 0px pink;
+        /*transform-origin: center center;*/
+        /*animation: run 1s linear alternate infinite;*/
+
+      }
+      .h-1{
+        height:200px;
+        width:200px;
+        transform: rotate(45deg) translate(248px,141px);
+        /*transform-origin: center -100px;*/
+        background: pink;
+        /*animation: run2 1s linear alternate infinite;*/
+      }
+      @keyframes run {
+        0%{
+          transform: scale(1,1);
+        }
+        50%{
+          transform: scale(1.5,1.5);
+        }
+        100%{
+          transform: scale(2,2);
+        }
+      }
+  
+
+    </style>
+  </head>
+  <body>
+    <div class="heart">
+      <div class="h-1">
+
+      </div>
+      <div class="yuan">
+
+      </div>
+    </div>
+
+  </body>
+</html>

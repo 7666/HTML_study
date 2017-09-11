@@ -1,0 +1,13 @@
+body{background: lightgreen;}
+.dun{width:500px;margin: 200px auto;}
+.dun img{transition: all 2s cubic-bezier(.22,.61,.36,1);}
+.dun img:nth-of-type(1){transform: rotate(91deg) translate(20px,30px);}
+.dun img:nth-of-type(2){transform: rotate(-15deg) translate(165px,121px);}
+.dun img:nth-of-type(3){transform: rotate(103deg) translate(132px,321px);}
+.dun img:nth-of-type(4){transform: rotate(-47deg) translate(122px,156px);}
+.dun img:nth-of-type(5){transform: rotate(83deg) translate(12px,156px);}
+.dun img:nth-of-type(6){transform: rotate(97deg) translate(158px,30px);}
+.dun img:nth-of-type(7){transform: rotate(-230deg) translate(50px,158px);}
+.dun img:nth-of-type(8){transform: rotate(131deg) translate(50px,30px);}
+.dun img:nth-of-type(9){transform: rotate(-123deg) translate(300px,30px);}
+.dun:hover img{transform: rotate(0deg) translate(0px,0px);}

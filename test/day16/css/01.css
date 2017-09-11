@@ -1,0 +1,115 @@
+.one {
+  border: 20px; }
+  .one:hover {
+    color: red; }
+
+.item {
+  border: 20px; }
+
+.item-1 {
+  border: solid 10px; }
+
+.item-2 {
+  border: solid blue 20px; }
+
+.item-3 {
+  font-size: 20px; }
+
+.item-4 {
+  font-size: 90px; }
+
+.one {
+  background: red; }
+  .one .two {
+    background: blue; }
+    .there {
+      background: pink; }
+
+@media all and (max-width: 800px) {
+  .five {
+    background: red; } }
+
+.six {
+  background: red; }
+
+.box {
+  box-shadow: 20px 30px 8px red; }
+
+@media all and (max-width: 800px) {
+  background: red; }
+.ol, .po, .pe {
+  background: red;
+  font-size: 20px; }
+
+.po, .pe {
+  border: solid red 1px; }
+
+.pe {
+  padding: 20px; }
+
+.pr {
+  padding: 20px;
+  border: 30px; }
+
+.pr {
+  font-size: 20px; }
+
+.pio {
+  padding: 60px; }
+
+.you {
+  background: green; }
+
+h1 {
+  font-size: 80px; }
+
+h2 {
+  font-size: 60px; }
+
+h3 {
+  font-size: 40px; }
+
+h4 {
+  font-size: 20px; }
+
+h5 {
+  font-size: 0px; }
+
+.item1 {
+  padding: 100px; }
+
+.item2 {
+  padding: 200px; }
+
+.item3 {
+  padding: 300px; }
+
+.item4 {
+  padding: 400px; }
+
+.item5 {
+  padding: 500px; }
+
+.it1 {
+  background: red; }
+
+.it2 {
+  background: red; }
+
+.it3 {
+  background: red; }
+
+.it4 {
+  background: red; }
+
+.it5 {
+  background: red; }
+
+.it6 {
+  background: red; }
+
+.hp {
+  border: red 20px solid;
+  border: blue 30px solid; }
+
+/*# sourceMappingURL=01.css.map */

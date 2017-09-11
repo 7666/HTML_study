@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>biao</title>
+    <style media="screen">
+      .biao{
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        border:5px solid black;
+        position: relative;
+      }
+      .b-1{
+        width:6px;
+        height:6px;
+        border-radius:50%;
+        background: black;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin-left: -3px;
+        margin-top: -3px;
+        box-shadow: 0px -100px,0px 100px,100px 0px,-100px 0px,-50px 85px,50px 85px,85px 50px,50px -85px,-50px -85px,50px 85px,-85px -50px,85px -50px,-85px 50px;
+      }
+      .h{
+        width:10px;
+        height:50px;
+        background: black;
+        position:absolute;
+        left:-2px;
+        top:-47px;
+        transform-origin: bottom;
+        animation: s 43200s infinite linear;
+      }
+      .m{
+        width:6px;
+        height:70px;
+        background: black;
+        position:absolute;
+        left:0px;
+        top:-67px;
+        transform-origin: bottom;
+        animation: s 3600s infinite linear;
+      }
+      .s{
+        width:2px;
+        height:90px;
+        background: red;
+        position:absolute;
+        left:2px;
+        top:-87px;
+        transform-origin: bottom;
+        animation: s 60s infinite linear;
+      }
+      @keyframes s {
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="biao">
+      <div class="b-1">
+        <div class="h">
+
+        </div>
+        <div class="m">
+
+        </div>
+        <div class="s">
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

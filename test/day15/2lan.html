@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>两栏布局</title>
+    <style>
+      *{
+        border: 0px;
+        padding: 0px;
+      }
+      .one div:nth-child(1){
+        width:200px;
+        height:300px;
+        background: red;
+        float:left;
+      }
+      .one div:nth-child(2){
+        height:300px;
+        background: blue;
+        margin-left: 200px;
+      }
+
+      .two{
+        position:relative;
+        margin-top: 100px;
+      }
+      .two div:nth-child(1){
+        width:200px;
+        height: 300px;
+        background: red;
+      }
+      .two div:nth-child(2){
+        position:absolute;
+        height:300px;
+        left:200px;
+        right:0px;
+        top: 0px;
+        background: blue;
+      }
+
+      .there{
+        display: flex;
+        width:100%;
+        margin-top: 100px;
+      }
+      .there div:nth-child(1){
+        width:200px;
+        height:300px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        background: red;
+      }
+      .there div:nth-child(2){
+        flex-grow: 1;
+        flex-shrink: 1;
+        background: blue;
+        height:300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='one'>
+      <div></div>
+      <div></div>
+    </div>
+    <div class='two'>
+      <div></div>
+      <div></div>
+    </div>
+    <div class='there'>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

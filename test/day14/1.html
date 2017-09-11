@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tu</title>
+    <style media="screen">
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    .tu{
+      margin:200px auto;
+      width:800px;
+      height:90px;
+      border: 1px #eee solid;
+      overflow: hidden;
+
+    }
+    .tu-1{
+      /*animation: tu 5s linear;*/
+      width:20000px;
+    }
+    .tu-1-1{
+      float:left;
+      animation: tu 5s linear infinite reverse;
+    }
+    .tu-1-2{
+      float:left;
+      animation: tu 5s linear infinite reverse;
+    }
+    @keyframes tu {
+      0%{
+        transform: translateX(0px);
+      }
+      100%{
+        transform: translateX(-906px);
+
+      }
+    }
+    .tu:hover .tu-1-1{
+      animation-play-state: paused;
+    }
+    .tu:hover .tu-1-2{
+      animation-play-state: paused;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="tu">
+      <div class="tu-1">
+        <div class="tu-1-1">
+      <img src="./image/1.jpg" alt="">
+      <img src="./image/2.jpg" alt="">
+      <img src="./image/3.jpg" alt="">
+      <img src="./image/4.jpg" alt="">
+      <img src="./image/5.jpg" alt="">
+      <img src="./image/6.jpg" alt="">
+      <img src="./image/7.jpg" alt="">
+      </div>
+      <div class="tu-1-2">
+      <img src="./image/1.jpg" alt="">
+      <img src="./image/2.jpg" alt="">
+      <img src="./image/3.jpg" alt="">
+      <img src="./image/4.jpg" alt="">
+      <img src="./image/5.jpg" alt="">
+      <img src="./image/6.jpg" alt="">
+      <img src="./image/7.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

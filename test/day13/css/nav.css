@@ -1,0 +1,13 @@
+*{padding: 0;margin:0;}
+body{background: lightblue;}
+.nav{width:1000px;margin:200px auto;height:30px;}
+a{text-decoration: none;}
+.nav ul{list-style: none;transform-style: preserve-3d;}
+.nav ul li{float:left;padding: 30px;position: relative;width:50px;height:20px;transform-style: preserve-3d;transition:all 0.2s ease-in;}
+.nav ul li div{position: absolute;}
+.nav ul li div:nth-of-type(2){width:100px;transform: rotateX(90deg);background: lightgreen;}
+.nav ul li div:nth-of-type(1){width:100px;background: lightyellow;transform: translateZ(15px);}
+
+/*.nav ul li div:nth-of-type(3){width:100px;height:30px;background: lightyellow;transition:all 2s ease-in;transform-origin: bottom;transform: rotateX(-90deg);}
+.nav ul li div:nth-of-type(4){width:100px;height:30px;background: lightyellow;transition:all 2s ease-in;transform: translateZ(-30deg);}*/
+.nav ul li:hover{transform: rotateX(-90deg);}

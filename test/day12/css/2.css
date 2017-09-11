@@ -1,0 +1,3 @@
+*{margin:0;padding: 0;}
+.a{background-image: radial-gradient(250px,white 50% ,red, orange,yellow,green,cyan,blue,purple);;width:500px;height:500px;border-radius:250px;position:relative;margin: 0 auto;}
+.a1{background: white;width:500px;height:250px;position: absolute;left:0;bottom: 0;}

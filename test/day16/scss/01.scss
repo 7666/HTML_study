@@ -1,0 +1,155 @@
+$value : 20px;
+$color : red;
+$name :item;
+
+
+
+.one{
+  border:$value;
+  &:hover{
+    color: $color;
+  }
+}
+
+.#{$name}{
+  border:$value;
+}
+
+$list: 10px 20px 30px 40px 50px;
+$lists: red 10px, blue 20px, yellow 30px;
+
+.#{$name}-1{
+  border:solid nth($list,1);
+}
+
+.#{$name}-2{
+  border: solid nth($lists,2);
+}
+
+.#{$name}-3{
+  font-size:nth(nth($lists,2),2);
+}
+
+$map: (h1:90px ,h2:50px, h3:30px);
+
+.#{$name}-4{
+  font-size: map-get($map, 'h1')
+}
+
+.one{
+  background:red;
+  .two{
+    background:blue;
+    @at-root .there{
+      background: pink;
+    }
+  }
+}
+
+@mixin loong($width){
+  @media all and (max-width: $width){
+    background: red;
+  }
+}
+
+.five{
+  @include loong(800px);
+}
+
+@mixin run($hello:red){
+  background: $hello;
+}
+
+.six{
+  @include run;
+}
+
+@mixin pop($values...){
+  box-shadow: $values;
+}
+
+.box{
+  @include pop(20px 30px 8px red)
+}
+
+@mixin max-screen($max){
+  @media all and (max-width: $max){
+    @content;
+  }
+}
+
+@include max-screen(800px){
+  background: red;
+}
+
+
+.ol{
+  background: red;
+  font-size: 20px;
+}
+
+.po{
+  @extend .ol;
+  border:solid red 1px;
+}
+
+.pe{
+  @extend .po;
+  padding:20px;
+}
+
+%jio{
+  padding:20px;
+  border: 30px;
+}
+
+.pr{
+  @extend %jio;
+  font-size: 20px;
+}
+
+@function love($olo){
+  @return $olo * 3;
+}
+
+.pio{
+  padding:love(20px);
+}
+
+$io :100;
+
+.you{
+@if $io > 100{
+  background: red;
+}@else if $io < 100{
+  background: blue;
+}@else{
+  background: green;
+}
+}
+
+
+@for $i from 1 through 5{
+  h#{$i}{
+    font-size: 100px - ($i * 20px);
+  }
+}
+@for $j from 1 to 6{
+  .item#{$j}{
+    padding:$j * 100px;
+  }
+}
+
+$shu: 1 2 3 4 5 6;
+@each $k in $shu{
+  .it#{$k}{
+    background: red;
+  }
+}
+
+$lol: red 20px solid, blue 30px solid;
+.hp{
+@each $o in $lol{
+  border:$o;
+}
+}
