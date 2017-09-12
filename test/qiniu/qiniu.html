@@ -23,11 +23,7 @@
       background-color: #303848;
     }
 
-    #nav {
-      background: transparent;
-      border: none;
-    }
-
+ #nav { background: transparent; border: none; position: absolute; top: 0; left: 0; right: 0; z-index: 1030; }
     .btn-white {
       color: #fff;
       background-color: transparent;
@@ -82,17 +78,37 @@
         height: 315px;
       }
     }
-
     @media all and (max-width:425px) {}
 
     .inline-block {
       display: inline-block;
     }
+    .fang{
+      border:none;
+    }
+    .fang:hover{
+      box-shadow: 0 0 0 #EFEFEF, 0.02rem 0.02rem 0.2rem #B9B9B9;
+      transition: all 0.3s;
+      transform: scale(1.02, 1.02);
+    }
+ .helper{ z-index: 1000; width: 42px; height: 128px; overflow: hidden; position: fixed; top: 50%; right: 8px;background: #fff;border:solid 1px gray;}
+ .helper img{
+   width:100%;
+   height:auto;
+ }
+ .helper span{ display: inline-block; line-height: 16px; padding: 5px 12px; writing-mode: vertical-rl; }
+ img.close-1{
+   width:15px;
+   height:15px;
+   margin-left: 15px;
+   margin-top: -10px;
+ }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-fixed-top navbar-default" id="nav">
+
+  <nav class="navbar navbar-default" id="nav">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -105,7 +121,22 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="navbar-left nav navbar-nav">
-          <li class="list-unstyled"><a href="#">产品</a></li>
+          <li class="list-unstyled dropdown hover-menu">
+          <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品</a>
+          <ul class="dropdown-menu" style="background:#333;">
+            <li role="separator" class="divider"></li>
+            <li><a href="#">对象存储</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">融合 CDN</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">容器云</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">深度学习</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">大数据</a></li>
+          </ul>
+        </li>
+
           <li class="list-unstyled"><a href="#">解决方案</a></li>
           <li class="list-unstyled"><a href="#">价格</a></li>
           <li class="list-unstyled"><a href="#">关于我们</a></li>
@@ -247,7 +278,7 @@
     </div>
   </div>
 
-  <div class="jumbotron text-center">
+<div class="jumbotron text-center">
   <div class="container">
     <h2>一站式视频点播和直播解决方案</h2>
     <p class='desc'>集成存储与融合 CDN，汇聚七牛强大的数据处理能力，提供直播、录制、转码、发布、加速、播放等一站式视频直播、点播服务。</p>
@@ -293,7 +324,7 @@
 
   </div>
 </div>
-</div>
+
 
 
 
@@ -348,8 +379,8 @@
         </div>
         <div class="col-md-9">
           <div class="row">
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
+            <div class="col-sm-6 col-md-4 ">
+              <div class="thumbnail fang">
                 <img src="./img/13.png" alt="...">
                 <div class="caption">
                   <p>2017年8月28日发布在 七牛动态</p>
@@ -357,8 +388,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
+            <div class="col-sm-6 col-md-4 ">
+              <div class="thumbnail fang">
                 <img src="./img/14.png" alt="...">
                 <div class="caption">
                   <p>2017年6月5日发布在 媒体报道</p>
@@ -366,8 +397,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
+            <div class="col-sm-6 col-md-4 ">
+              <div class="thumbnail fang">
                 <img src="./img/15.png" alt="...">
                 <div class="caption">
                   <p>2017年5月23日发布在 媒体报道</p>
@@ -393,7 +424,7 @@
           <div class="row">
             <div class="col-md-4">
               <h3>产品与服务</h3>
-              <ul class='list-unstyled list-group' style="background:transparent;">
+              <ul class='list-unstyled list-group' style="background:transparent;" >
                 <li class="list-group-item" style="background:transparent;border:none;">对象存储</li>
                 <li class="list-group-item" style="background:transparent;border:none;">融合 CDN</li>
                 <li class="list-group-item" style="background:transparent;border:none;">容器云 (即将上线)</li>
@@ -455,7 +486,17 @@
   </div>
 
 
+  <div class="helper">
+    <a href="#">
+      <img src="./img/helper.png" alt="">
+      <span>服务·咨询</span>
+    </a>
+    <a class="close-btn" href="#">
 
+        <img src="./img/close.png" alt="" class="close-1">
+
+    </a>
+  </div>
 
 
 
@@ -465,6 +506,13 @@
 
   <script src="./js/jquery.min.js" charset="utf-8"></script>
   <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    $('.hover-menu').hover(function(){
+      $(this).addClass('open');
+    },function(){
+      $(this).removeClass('open');
+    })
+  </script>
 </body>
 
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>判断这天是今年的第几天</title>
+  </head>
+  <body>
+    <input type="text" placeholder="年" id='y'>
+    <input type="text" placeholder="月" id='m'>
+    <input type="text" placeholder="日" id="d">
+    <button id='btn'>提交</button>
+    <span id="show"></span>
+
+    <script type="text/javascript">
+      var y = document.getElementById('y');
+      var m = document.getElementById('m');
+      var d = document.getElementById('d');
+      btn.onclick = function(){
+        var year = Number(y.value), month = Number(m.value), day = Number(d.value);
+        if(isNaN(year) || isNaN(day) || isNaN(month) ){
+          console.log('请正确输入!');
+          show.innerHTML = '请正确输入!' ;
+          return;
+        }
+        if(month > 12 || month < 1){
+          console.log('请正确输入月份!')
+          show.innerHTML('请正确输入月份!');
+          return;
+        }
+        if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
+          if(day > 31 || day < 1){
+            console.log('请正确输入日期');
+            show.innerHTML = '请正确输入日期!';
+            return;
+          }
+        }
+        if(month==2 || month==4 || month==6 || month==9 || month==11){
+          if(day > 30 || day < 1){
+            console.log('请正确输入日期!');
+            show.innerHTML = '请正确输入日期!';
+          }
+        }
+        var p = 28;
+        if((year%400==0)||(((year%4==0))&&(year%100!=0))){
+          p = 29;
+        }
+
+        if(month==2){
+          if(day > p){
+            console.log('请正确输入日期!');
+            show.innerHTML = '请正确输入日期!';
+          }
+        }
+        var sum = 0;
+        var x = month - 1
+        switch(x){
+          case 0:
+          sum = 0;
+          break;
+          case 1:
+          sum = 31;
+          break;
+          case 2:
+          sum = 31 + p;
+          break;
+          case 3:
+          sum = 31 + p + 31;
+          break;
+          case 4:
+          sum = 31 + p + 31 + 30;
+          break;
+          case 5:
+          sum = 31 + p + 31 + 30 + 31;
+          break;
+          case 6:
+          sum = 31 + p + 31 + 30 + 31 + 30;
+          break;
+          case 7:
+          sum = 31 + p + 31 + 30 + 31 + 30 + 31;
+          break;
+          case 8:
+          sum = 31 + p + 31 + 30 + 31 + 30 + 31 + 31 ;
+          break;
+          case 9:
+          sum = 31 + p + 31 + 30 + 31 + 30 + 31 + 31 +30;
+          break;
+          case 10:
+          sum = 31 + p + 31 + 30 + 31 + 30 + 31 + 31 +30 + 31;
+          break;
+          case 11:
+          sum = 31 + p + 31 + 30 + 31 + 30 + 31 + 31 +30 + 31 + 30;
+          break;
+
+          }
+          sum = sum + day;
+          console.log(sum);
+          show.innerHTML = sum;
+
+      }
+
+    </script>
+
+  </body>
+</html>
