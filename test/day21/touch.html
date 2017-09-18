@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>touch</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    var startX,startY,endX,endY,X,Y;
+      document.addEventListener('touchstart',function(event){
+         window.startX = event.touches[0].clientX;
+         window.startY = event.touches[0].clientY;
+      },false);
+      document.addEventListener('touchend',function(event){
+         window.endX = event.changedTouches[0].clientX;
+         window.endY = event.changedTouches[0].clientY;
+         X = startX - endX;
+         Y = startY - endY;
+         console.log(X);
+         console.log(Y);
+         if(Math.abs(X)>Math.abs(Y)){
+           if(X>0){
+             alert('向左滑动');
+           }
+           if(X<0){
+             alert('向右滑动');
+           };
+         };
+          if(Math.abs(X)<=Math.abs(Y)){
+            if(Y>0){
+              alert('向上滑动');
+            };
+            if(Y<0){
+              alert('向下滑动');
+            };
+          };
+
+      },false);
+
+    </script>
+
+  </body>
+</html>

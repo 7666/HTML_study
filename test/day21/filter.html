@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>filter方法</title>
+  </head>
+  <body>
+
+    <script>
+      var a = [1,2,3,4,5,6,7,8,9,10];
+
+      var b = a.filter(function(element,index,array){
+        return element % 2 === 0;//其返回值为true的元素,都被添加到了其返回值中.
+        // 上面的代码等价于下面的
+        /*
+         if(element%2===0){
+          return true;
+         }else{
+          return false;
+         }
+         */
+      })
+
+      console.log(a);//[1,2,3,4,5,6,7,8,9,10],可见这个方法对原数组不会产生影响.
+      console.log(b);//[2,4,6,8,10]
+
+      //如何将一个稀疏数组变为稠密数组?
+      var x = [1,,,,,,,,4,5,6,,,,7];
+
+      var y = x.filter(function(element,index,array){
+        return element === undefined ? false : true ;//三目运算
+      })
+      console.log(y);
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>every some</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a = [2,4,6,8,10,12,14];
+      console.log(a.every(function(element,index,array){
+        return element%2===0;
+      }));//true
+
+      var b = [2,4,6,8,10,12,13];
+      console.log(b.every(function(element,index,array){
+        return element%2===0;
+      }));//false
+
+      var a = [2,3,5,7,9,11,13];
+      console.log(a.some(function(element,index,array){
+        return element%2===0;
+      }));//true
+
+      var a = [1,3,5,7,9,11,13];
+      console.log(a.some(function(element,index,array){
+        return element%2===0;
+      }));//false
+
+    </script>
+
+  </body>
+</html>

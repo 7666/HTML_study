@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>10进制转化成2进制</title>
+  </head>
+  <body>
+    <script>
+      var a = 12;
+
+      function fun(a){
+        var c = [];
+        for(;;){
+          b = a%2;
+          a = parseInt(a/2);
+          c.unshift(b);
+          if(a==1){
+            c.unshift(1);
+            break;
+          }
+        }
+        var d = c.join('');
+        console.log(d);
+      }
+    fun(a);
+
+    </script>
+
+  </body>
+</html>

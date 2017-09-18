@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ie</title>
+</head>
+
+<body>
+  <button type="button" name="button" id='btn'>anniu</button>
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var handler = function() {
+      alert("Clicked");
+    };
+    btn.attachEvent("onclick", handler);
+    //这里省略了其他代码
+    btn.detachEvent("onclick", handler);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>判断一个函数是否是回文数组</title>
+  </head>
+  <body>
+    <script>
+      var a = ["hello", "world", "hehe","eheh", "dlrow", "olleh"];
+
+      function fun(a){
+        var c = [];
+        var b = a.join('');
+        var d = b.split('');
+        for(var p = 0; p < b.length;p++){
+          c.unshift(b[p]);
+        }
+        console.log(d);
+        console.log(c);
+        d = d.join('');
+        c = c.join('');
+        if (c === d) {
+          return 'yes';
+        }else{
+          return 'no';
+        }
+
+      }
+
+      k = fun(a);
+      console.log(k);
+
+    </script>
+  </body>
+</html>

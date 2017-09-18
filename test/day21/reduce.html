@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reduce</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var a = [1,2,3,4,5,6,7,8,9,10];
+
+      var b = a.reduce(function(initvalue,element,index,array){
+        return initvalue + element;//在不提供初始值的情况下,initvalue从数组的第一个值开始.
+        //本次的返回值会赋给initvalue
+      })
+      console.log(b);//55
+
+      //当然你也可以设置初始值,如下:
+
+      var c = a.reduce(function(initvalue,element,index,array){
+        return initvalue * element;
+      },1)//在这里设置初始值
+      console.log(c);//3628800
+    </script>
+
+  </body>
+</html>

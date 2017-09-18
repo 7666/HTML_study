@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数组的添加和删除</title>
+  </head>
+  <body>
+
+    <script>
+    // 直接对新索引值进行赋值
+    var a1 = [1,2,3];
+    a1[3] = 4;
+    a1[4] = 5;
+
+    //直接用delete删除
+    delete a1[0];//不影响长度
+
+    //末尾的添加，删除
+    console.log(a1.push(10,20,30));//8
+    console.log(a1);//[undefined,2,3,4,5,10,20,30]
+
+    //删除最后一个，长度减1
+    console.log(a1.pop());//30
+
+    //开头添加，删除
+    //shift unshift
+    var a2 = [1,2,3,4,5];
+    console.log(a2.shift());//1
+
+    // a2.unshift(10,20,30);
+    a2.unshift(10);
+    a2.unshift(20);
+    a2.unshift(30);
+    console.log(a2);//[30,20,10,2,3,4,5]
+
+    var a3 = a2.reverse();
+    console.log(a3);
+    </script>
+
+  </body>
+</html>

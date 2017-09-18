@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>小米</title>
+  </head>
+  <link rel="stylesheet" href="./right/iconfont.css">
+  <style>
+    *{
+      border: 0px;
+      padding: 0px;
+    }
+    .clearfix::after{
+      content: '';
+      clear:both;
+      display: block;
+    }
+    .heart{
+      width: 1300px;
+      /*height: auto;*/
+      margin: 20px auto;
+      background: #eee;
+    }
+    .top{
+      padding:20px;
+    }
+    .top h3{
+      float: left;
+    }
+    .top ul{
+      list-style: none;
+    }
+    .top ul li {
+      float:right;
+      margin: 10px 20px;
+    }
+    .tag-active{
+      color: #ff6700;
+      border-bottom: #ff6700 solid 2px;
+      cursor: pointer;
+    }
+    .center{
+      padding:20px;
+    }
+    .center-left{
+      float: left;
+      width:20%;
+      transition: all .2s linear;
+    }
+    .center-right{
+      width:80%;
+      float: right;
+    }
+    .center-right ul{
+      list-style: none;
+      margin-top:0px;
+    }
+    .center-right ul li{
+      float: left;
+    }
+    .list-item{
+      width: 234px;
+      height:300px;
+      background: #fff;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      position: relative;
+      text-align: center;
+      transition: all .2s linear;
+    }
+    ul .back{
+      background-color: transparent;
+    }
+    .list-tag{
+      width:100%;
+      height: 47%;
+      box-sizing: border-box;
+      background: #fff;
+    }
+    .back div:nth-of-type(1){
+      margin-bottom: 18px;
+    }
+    li .list-tag-bottom{
+    }
+    .top-box-center{
+      width:60px;
+      height:20px;
+      background: #e53953;
+      position: absolute;
+      left:50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+    li .top-box-green{
+      background: #83c44e;
+    }
+    li .top-box-yellow{
+      background: #ffac13;
+    }
+    .top-box-center span{
+      color:#fff;
+      line-height: 20px;
+    }
+    .img{
+      text-align: center;
+      margin: 20px auto ;
+      width:150px;
+      height:150px;
+    }
+    .img img{
+      width: 150px;
+      height: 150px;
+    }
+    .title{
+      font-size: 14px;
+      color:#333;
+    }
+    .desc{
+      font-size: 12px;
+      color:#b0b0b0;
+    }
+    .price{
+      color:#ff6700;
+      font-size: 14px;
+    }
+    .del{
+      font-size: 14px;
+      color: #b0b0b0;
+      text-decoration: line-through;
+    }
+    .list-tag{
+      transition: all .2s linear;
+    }
+    .list-tag-left{
+      margin-top: 20px;
+      float:left;
+      width:50%;
+      height:75%;
+    }
+    .list-tag-right{
+      margin-top: 20px;
+      float: right;
+      width:50%;
+      height:50%;
+      position: relative;
+    }
+    .list-tag-right img{
+      width: 80px;
+      height: 80px;
+    }
+    .list-tag-right i{
+      font-size: 48px;
+      line-height: 48px;
+      color: #ff6700;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(25%,-50%);
+    }
+    .center-left-active{
+      box-shadow: 0 15px 30px gray ;
+      animation: all 1s ease;
+      transform: translate3d(0, -2px, 0);
+    }
+    .center-right-active{
+      box-shadow: 0 15px 30px gray ;
+      animation: all 1s ease;
+      transform: translate3d(0, -2px, 0);
+    }
+    .wrapper{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      width: 234px;
+      height: 0;
+      overflow: hidden;
+      font-size: 12px;
+      background: #ff6700;
+      opacity: 0;
+      transition: all .2s linear;
+    }
+    .white{
+      color:#fff;
+    }
+    li .wrapper-active{
+      height:80px;
+      opacity:1;
+    }
+    .center-right ul{
+      display:none;
+    }
+    .center-right .active{
+      display:block;
+    }
+  </style>
+  <body>
+    <div class="heart">
+      <div class="top clearfix">
+        <h3>家电</h3>
+        <ul class='tag'>
+          <li>家居</li>
+          <li>电脑</li>
+          <li>电视影音</li>
+          <li class="tag-active">热门</li>
+        </ul>
+      </div>
+      <div class="center clearfix">
+        <div class="center-left">
+          <img src="./xmad_14950222431232_Twnyl.jpg" alt="">
+        </div>
+        <div class="center-right clearfix">
+          <ul class='active'>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9.2折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1500287084.72131750!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电视</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1495074010.05677255!220x220 (1).jpg" alt="">
+              </div>
+              <p class='title'>小米电视 4</p>
+              <p class='desc'>55 英寸／4K高清</p>
+              <span class="price">1299元</span> <span class="del">1999元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1505106710.28498495!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米笔记本PRO 15.6英寸</p>
+              <p class='desc'>i7 处理器／256GB+8GB大内存</p>
+              <span class="price">6099元</span> <span class="del">10299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9.2折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1499138177.54329452!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米笔记本 Air</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">7099元</span> <span class="del">12099元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-yellow">
+                <span>免邮费</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1470288129.01686992!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米路由器 3C</p>
+              <p class='desc'>app智能控制／智能防蹭网</p>
+              <span class="price">99元</span> <span class="del">299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1505264799.43246303!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米移动电源 2C</p>
+              <p class='desc'>智能爆炸/20000mAh</p>
+              <span class="price">199元</span> <span class="del">299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1504498936.11861982!220x220.jpg" alt="">
+              </div>
+              <p class='title'>米家电水壶</p>
+              <p class='desc'>一杯水是一家人的安心</p>
+              <span class="price">99元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item back">
+              <div class="list-tag list-tag-top">
+                <div class="list-tag-left">
+                  <p class="title">小白摄像机</p>
+                  <p class='price'>399元</p>
+                </div>
+                <div class="list-tag-right">
+                  <img src="./pms_1468806372.46368911!220x220.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="list-tag list-tag-bottom">
+                <div class="list-tag-left">
+                  <p class="title">浏览更多</p>
+                  <p class="desc">热门</p>
+                </div>
+                <div class='list-tag-right'>
+                  <i class="iconfont icon-xiangyou"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1500287084.72131750!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电视</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1495073969.01063180!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电视4 49英寸</p>
+              <p class='desc'>4.9mm机身／无边框设计</p>
+              <span class="price">6099元</span> <span class="del">7299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1490077569.08131612!220x220.png" alt="">
+              </div>
+              <p class='title'>小米电视4A 标准版</p>
+              <p class='desc'>4K超高清屏／64位高性能处理器</p>
+              <span class="price">10099元</span> <span class="del">11299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9.2折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1503909300.25797209!220x220.png" alt="">
+              </div>
+              <p class='title'>小米电视4A 55英寸</p>
+              <p class='desc'>4K高清HDR／1GB+4GB大内存</p>
+              <span class="price">2099元</span> <span class="del">3299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-yellow">
+                <span>免邮费</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1505381182.99513672!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电视</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1495074053.84174465!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电视</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1479190789.95594557!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米盒子</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">399元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item back">
+              <div class="list-tag list-tag-top">
+                <div class="list-tag-left">
+                  <p class="title">盒子3增强版</p>
+                  <p class='price'>399元</p>
+                </div>
+                <div class="list-tag-right">
+                  <img src="./xmad_14988107613863_SWjuV.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="list-tag list-tag-bottom">
+                <div class="list-tag-left">
+                  <p class="title">浏览更多</p>
+                  <p class="desc">热门</p>
+                </div>
+                <div class='list-tag-right'>
+                  <i class="iconfont icon-xiangyou"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享1折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1499138177.54329452!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米Pro</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1505106710.28498495!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米笔记本</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1469583247.6157588!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米笔记本</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9.2折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1469583247.6157588!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电视</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-yellow">
+                <span>免邮费</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1490595812.95661863!220x220.png" alt="">
+              </div>
+              <p class='title'>小米无线鼠标</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1478248566.62624407!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米便携鼠标</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1490702347.3628109!220x220.png" alt="">
+              </div>
+              <p class='title'>小米便携键盘</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item back">
+              <div class="list-tag list-tag-top">
+                <div class="list-tag-left">
+                  <p class="title">小白转换器</p>
+                  <p class='price'>399元</p>
+                </div>
+                <div class="list-tag-right">
+                  <img src="./pms_1469523170.25518983!220x220.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="list-tag list-tag-bottom">
+                <div class="list-tag-left">
+                  <p class="title">浏览更多</p>
+                  <p class="desc">热门</p>
+                </div>
+                <div class='list-tag-right'>
+                  <i class="iconfont icon-xiangyou"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享2折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1465366178.11466342!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米水壶</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">9元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9折</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1498564154.53184175!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电动牙刷</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./T1sWd_B7VT1RXrhCrK!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米体重秤</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center">
+                <span>享9.2折</span>
+              </div>
+              <div class="img">
+                <img src="./T1zBYgBCWv1RXrhCrK!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米空气净化器</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-yellow">
+                <span>免邮费</span>
+              </div>
+              <div class="img">
+                <img src="./T1OVC_ByY_1RXrhCrK!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电饭煲</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1496647119.81414190!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米电灯泡</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="top-box-center top-box-green">
+                <span>新品</span>
+              </div>
+              <div class="img">
+                <img src="./pms_1495520422.36514041!220x220.jpg" alt="">
+              </div>
+              <p class='title'>小米台灯</p>
+              <p class='desc'>64位四核处理器／1GB+4GB大内存</p>
+              <span class="price">1099元</span> <span class="del">1299元</span>
+              <div class="wrapper">
+                <p class='white'>小米值得拥有!</p>
+                <p class='white'>来自手机iPhone X</p>
+              </div>
+            </li>
+            <li class="list-item back">
+              <div class="list-tag">
+                <div class="list-tag-left">
+                  <p class="title">吸顶灯</p>
+                  <p class='price'>399元</p>
+                </div>
+                <div class="list-tag-right">
+                  <img src="./pms_1490756071.3088664!220x220.png" alt="">
+                </div>
+
+              </div>
+              <div class="list-tag">
+                <div class="list-tag-left">
+                  <p class="title">浏览更多</p>
+                  <p class="desc">热门</p>
+                </div>
+                <div class='list-tag-right'>
+                  <i class="iconfont icon-xiangyou"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./right/iconfont.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var centerLeft = document.getElementsByClassName('center-left')[0];
+      centerLeft.onmouseover = function(){
+        centerLeft.className += " center-left-active";
+      }
+      centerLeft.onmouseout = function(){
+        centerLeft.className = " center-left";
+      }
+      var centerRight = document.getElementsByClassName('center-right')[0];
+      for (var j = 0; j < 4; j++) {
+      var li = centerRight.children[j].children;
+      for (var i = 0; i < 7; i++) {
+        li[i].onmouseover = function(){
+          this.className += ' center-right-active';
+          var wrapper = this.getElementsByClassName('wrapper')[0];
+          wrapper.className += ' wrapper-active';
+        }
+        li[i].onmouseout = function(){
+          this.className = 'list-item';
+          var wrapper = this.getElementsByClassName('wrapper')[0];
+          wrapper.className = 'wrapper';
+        }
+      }
+      }
+
+        var listTag = document.getElementsByClassName('list-tag');
+        for (var i = 0; i < listTag.length; i++) {
+          var listEach = listTag[i];
+          listEach.onmouseover = function(){
+          this.className += ' center-right-active';
+        }
+          listEach.onmouseout = function(){
+          this.className = 'list-tag';
+        }
+        }
+
+        var tag = document.getElementsByClassName('tag')[0];
+        var each = tag.children;
+          each[0].onmouseover = function(){
+            var re = document.getElementsByClassName('tag-active')[0];
+            re.className = '';
+            this.className += ' tag-active';
+            var active = document.getElementsByClassName('active')[0];
+            var centerRight = document.getElementsByClassName('center-right')[0];
+            var ul = centerRight.children[3];
+            active.className = '';
+            ul.className = 'active';
+          }
+
+          each[1].onmouseover = function(){
+            var re = document.getElementsByClassName('tag-active')[0];
+            re.className = '';
+            this.className += ' tag-active';
+            var active = document.getElementsByClassName('active')[0];
+            var centerRight = document.getElementsByClassName('center-right')[0];
+            var ul = centerRight.children[2];
+            active.className = '';
+            ul.className = 'active';
+          }
+
+          each[2].onmouseover = function(){
+            var re = document.getElementsByClassName('tag-active')[0];
+            re.className = '';
+            this.className += ' tag-active';
+            var active = document.getElementsByClassName('active')[0];
+            var centerRight = document.getElementsByClassName('center-right')[0];
+            var ul = centerRight.children[1];
+            active.className = '';
+            ul.className = 'active';
+          }
+
+          each[3].onmouseover = function(){
+            var re = document.getElementsByClassName('tag-active')[0];
+            re.className = '';
+            this.className += ' tag-active';
+            var active = document.getElementsByClassName('active')[0];
+            var centerRight = document.getElementsByClassName('center-right')[0];
+            var ul = centerRight.children[0];
+            active.className = '';
+            ul.className = 'active';
+          }
+
+    </script>
+  </body>
+</html>
