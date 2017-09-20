@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reandom</title>
+    <style media="screen">
+      .heart{
+        background: rgb(255, 0, 0);
+        width: 1200px;
+        height: 1000px;
+        margin: 20px auto;
+        position: relative;
+      }
+      .clock{
+        background:url(./clock/clock.png);
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .clock img:nth-of-type(1){
+        position: absolute;
+        left: 285px;
+        top: 0px;
+        /*transform-origin: bottom;*/
+      }
+      .clock img:nth-of-type(2){
+        position: absolute;
+        left: 285px;
+        top: 0px;
+      }
+      .clock img:nth-of-type(3){
+        position: absolute;
+        left: 285px;
+        top: 0px;
+      }
+      #downtime{
+        font-size: 50px;
+        text-align: center;
+      }
+      .yzm{
+        text-align: center;
+      }
+      .yzm input:nth-of-type(1){
+        width: 200px;
+        height: 50px;
+        box-sizing: border-box;
+      }
+      .yzm button{
+        width:50px;
+        height:50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart">
+      <div class='clock'>
+        <img src="./clock/hour.png" alt="">
+        <img src="./clock/minute.png" alt="">
+        <img src="./clock/second.png" alt="">
+      </div>
+      <p id="downtime">
+        倒计时<span></span>天 <sapn></sapn>小时 <span></span>分钟<span></span>秒
+      </p>
+    </div>
+    <div class="yzm">
+      <input type="text" disabled><button type="button" name="button">刷新</button>
+    </div>
+    <script type="text/javascript">
+      var heart = document.getElementsByClassName('heart')[0];
+      // 背景颜色变换
+      function color(){
+      var list = [];
+      for (var i = 0; i < 3; i++) {
+        var ran = 0;
+        ran = Math.floor(Math.random()*255);
+        list.push(ran);
+        var str = list.join(',')
+      }
+      var bg = 'rgb('+str +')';
+      heart.style.background = bg;
+      }
+      setInterval(color, 1000);
+
+      //时钟
+
+      // function clock(){
+      // var d  = new Date();
+      // var h = d.getHours ();
+      // var m = d.getMinutes();
+      // var s = d.getSeconds();
+      // var ss;
+      // console.log(h, m, s);
+      // if(h > 12){
+      //   h = h - 12;
+      // };
+      // var hdu= 0,mdu = 0,sdu = 0;
+      // for(var i =0;i<=12;i++){
+      //   if(h>i){
+      //     hdu+=30;
+      //   }
+      // }
+      // for(var i = 0; i <= 60;i++){
+      //   if(m>i){
+      //     mdu+=6;
+      //   }
+      //   if(s>i){
+      //     sdu+=6
+      //   }
+      // }
+      // var hou = document.getElementsByClassName('clock')[0].children[0];
+      // var min = document.getElementsByClassName('clock')[0].children[1];
+      // var sec = document.getElementsByClassName('clock')[0].children[2];
+      // hou.style.cssText = 'transform:rotate('+hdu+'deg);';
+      // min.style.cssText = 'transform:rotate('+mdu+'deg);';
+      // sec.style.cssText = 'transform:rotate('+sdu+'deg);';
+      // console.log(hdu,mdu,sdu);
+      // }
+      // setInterval(clock, 1000);
+
+      function clock(){
+      var d  = new Date();
+      var h = d.getHours ();
+      var m = d.getMinutes();
+      var s = d.getSeconds();
+      var ss = h*60*60+m*60+s;
+      var sdu = ss*6;
+      var mdu = sdu/60;
+      var hdu = mdu/12;
+      var hou = document.getElementsByClassName('clock')[0].children[0];
+      var min = document.getElementsByClassName('clock')[0].children[1];
+      var sec = document.getElementsByClassName('clock')[0].children[2];
+      hou.style.cssText = 'transform:rotate('+hdu+'deg);';
+      min.style.cssText = 'transform:rotate('+mdu+'deg);';
+      sec.style.cssText = 'transform:rotate('+sdu+'deg);';
+    }
+    setInterval(clock, 1000);
+
+    //倒计时
+    function djs(){
+    var taobao = new Date('2017-11-11 11:11:11');
+    // var now = new Date();
+    var now = new Date();
+    tm = taobao.getMonth() +1;
+    td = taobao.getDate();
+    th = taobao.getHours();
+    tmin = taobao.getMinutes();
+    ts = taobao.getSeconds();
+    nm = now.getMonth() +1;
+    nd = now.getDate();
+    nh = now.getHours();
+    nmin = now.getMinutes();
+    ns = now.getSeconds();
+    var tday = 0;
+    switch (tm) {
+      case 12:
+      tday += 30;
+      case 11:
+      tday += 31;
+      case 10:
+      tday += 30;
+      case 9:
+      tday += 31;
+      case 8:
+      tday += 31;
+      case 7:
+      tday += 30;
+      case 6:
+      tday += 31;
+      case 5:
+      tday += 30;
+      case 4:
+      tday += 31;
+      case 3:
+      tday += 28;
+      case 2:
+      tday += 31;
+      case 1:
+      tday += td;
+    }
+    var nday = 0;
+    switch (nm) {
+      case 12:
+      nday += 30;
+      case 11:
+      nday += 31;
+      case 10:
+      nday += 30;
+      case 9:
+      nday += 31;
+      case 8:
+      nday += 31;
+      case 7:
+      nday += 30;
+      case 6:
+      nday += 31;
+      case 5:
+      nday += 30;
+      case 4:
+      nday += 31;
+      case 3:
+      nday += 28;
+      case 2:
+      nday += 31;
+      case 1:
+      nday += nd;
+    }
+    var dd = tday - nday;
+
+    if((th - nh) < 0){
+      dd -= 1;
+      th += 24;
+    }
+    var dh = th - nh;
+
+    if((tmin - nmin) < 0){
+      dh -= 1;
+      tmin +=60;
+    }
+    var dmin = tmin - nmin;
+
+    if((ts - ns) < 0){
+      dmin -= 1;
+      ts += 60;
+    }
+    var ds = ts - ns;
+
+    var downtime = document.getElementById('downtime');
+    var dtdd = downtime.children[0];
+    var dtdh = downtime.children[1];
+    var dtdm = downtime.children[2];
+    var dtds = downtime.children[3];
+
+    dtdd.innerHTML = dd;
+    dtdh.innerHTML = dh;
+    dtdm.innerHTML = dmin;
+    dtds.innerHTML = ds;
+
+    }
+    setInterval(djs, 1000);
+
+
+    // 验证码
+    // var num = Math.floor(Math.random()*10+48);
+    // var letter = Math.floor(Math.random()*26+97);
+    // var list = [];
+    // var char = '';
+    // list.push(num);
+    // list.push(letter);
+    // if(list.length > 10){
+    //   list.shift();
+    // }
+    // var sj = Math.floor(Math.random()*10);
+    // char += list[sj];
+    // if (char.length > 6){
+    //
+    // }
+
+    var yzm = document.getElementsByClassName('yzm')[0];
+    var ins = yzm.children[0];
+    var btn = yzm.children[1];
+    btn.onclick = kkk;
+    kkk()
+    function kkk(){
+    var char = '';
+    while(true){
+    var list = ['A','a', 'B','b', 'C','c', 'D','d', 'E','e', 'F','f', 'G','g', 'H','h', 'I','i', 'J','j', 'K','k','L','l', 'M','m', 'N','n', 'O','o', 'P','p', 'Q','q', 'R','r', 'S','s', 'T','t', 'U','u', 'V','v', 'W','w', 'X','x', 'Y','y', 'Z','z',0,1,2,3,4,5,6,7,8,9];
+    var j = Math.floor(Math.random()*62);
+    char+=list[j];
+    if(char.length==6){
+      break;
+    }
+    }
+    ins.value = char;
+    }
+
+
+
+
+    </script>
+  </body>
+</html>

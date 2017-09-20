@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>timer</title>
+    <style media="screen">
+      *{
+        border: 0;
+        padding: 0;
+        }
+        .time{
+          width:400px;
+          height: 300px;
+          font-size: 20px;
+          margin: 20px auto;
+        }
+        .time p{
+          text-align: center;
+          color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="time">
+      <p>倒计时<span>10</span>秒</p>
+    </div>
+    <script type="text/javascript">
+      var time = document.getElementsByClassName('time')[0];
+      var timer = time.firstElementChild.firstElementChild;
+      var count = 10;
+      var fun = function(){
+        count--;
+        if(count === 0){
+          time.style.display = 'none';
+          clearInterval(timecount);
+        }
+        timer.innerHTML = count;
+        console.log(count);
+      }
+      var timecount = setInterval(fun, 1000);
+    </script>
+
+  </body>
+</html>

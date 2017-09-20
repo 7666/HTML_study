@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      hello
+    </title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var title = ['hello', 'world', 'hi', 'china'];
+    var t = document.getElementsByTagName('title')[0];
+    var i = 0;
+    function fun(){
+
+      if(i == 5){
+        i = 0
+      }
+      t.innerHTML = title[i];
+      i++;
+      setTimeout(fun, 2000);
+    }
+    fun();
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>事件委托</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <p>hello</p>
+      </li>
+      <li>
+        <span>
+          kfdokpos
+        </span>
+      </li>
+      <li>
+        <img src="./pms_1469583247.6157588!220x220.jpg" alt="">
+        <p>sjfdiojfoij</p>
+      </li>
+      <li>
+        <p>fjdoijsoifj</p>
+        <img src="./pms_1465366178.11466342!220x220.jpg" alt="">
+      </li>
+      <li>
+        <p>jfdiojdsojfojds</p>
+        <img src="./pms_1469583247.6157588!220x220.jpg" alt="">
+      </li>
+    </ul>
+    <script type="text/javascript">
+      var ulu = document.getElementsByTagName('ul')[0];
+      console.log(ulu);
+      ulu.onmouseover = function(ev){
+        var ev = ev || window.event;
+        var target = ev.target;
+        while(true){
+          if (target.nodeName === 'LI') {
+            target.style.cssText = 'background:red;'
+            break;
+          }
+
+          target = target.parentNode;
+        }
+      }
+    </script>
+  </body>
+</html>

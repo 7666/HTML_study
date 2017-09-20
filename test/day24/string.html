@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字符串操作</title>
+  </head>
+  <body>
+    <script>
+      var string1 = 'hello world';
+      var string2 = new String('hello world');
+      var string3 = String('hello world');
+      console.log(string1,string2,string3);
+      console.log(typeof string1);//string
+      console.log(typeof string2);//object
+      console.log(typeof string3);//string
+      console.log(Boolean(string1 === 'hello world'));//true
+      console.log(Boolean(string2 === 'hello world'));//false
+      console.log(Boolean(string3 === 'hello world'));//true
+    </script>
+  </body>
+</html>

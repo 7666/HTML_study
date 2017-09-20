@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>timeout</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var count = 5;
+      var fun = function(){
+        count--;
+        if(count == 0){
+          clearTimeout(out);
+          return;//一定要return，不然下面有添加了新的定时器
+        }
+        console.log('呵呵');
+        console.log(count);
+        var out = setTimeout(fun, 1000);
+      }
+      fun()
+    </script>
+  </body>
+</html>
