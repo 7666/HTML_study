@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>bibao</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      function fun1(){
+        var a = 1;
+        function fun2(){
+          console.log(a);
+        }
+        return fun2;
+      }
+      var result = fun1();
+      result()
+    </script>
+  </body>
+</html>

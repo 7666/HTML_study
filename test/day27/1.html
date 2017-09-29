@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>继承</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age){
+        this.name = name;
+        this.age = age;
+        this.getname = function(){
+          return this.name;
+        }
+      }
+
+      Person.prototype.sayhello = function(){
+        console.log('hello world!');
+      }
+
+      function Student(name, age, score){
+        this.name = name;
+        this.age = age;
+        this.score = score;
+        this.getscore = function(){
+          return this.score;
+        }
+      }
+
+      Student.prototype = new Person();
+      Student.prototype.constructor = Student;
+
+      var xm = new Person('xiao', 18, 66);
+      xm.sayhello();
+      console.log(xm);
+    </script>
+  </body>
+</html>

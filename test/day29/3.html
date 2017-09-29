@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="" placeholder="请输入邮箱">
+    <button id="btn">提交</button>
+    <h1 id="show"></h1>
+    <script type="text/javascript">
+      var input = document.getElementsByTagName('input')[0];
+      var btn = document.getElementById('btn');
+      var show = document.getElementById('show');
+
+      btn.addEventListener('click', function(){
+        var str = input.value;
+        var exp = /\w+?@\w+?\.\w{2,}/g;
+        show.innerHTML = exp.test(str);
+      })
+    </script>
+  </body>
+</html>

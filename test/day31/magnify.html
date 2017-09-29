@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>magnify</title>
+    <style media="screen">
+      *{
+        margin:0px;
+        padding:0px;
+      }
+      .img{
+        width:350px;
+        height: 350px;
+        border: solid #666 1px;
+        position: relative;
+        float: left;
+      }
+      .magnify{
+        border:solid red 1px;
+        width:500px;
+        height:500px;
+        overflow: hidden;
+        display: none;
+        position: relative;
+      }
+      .yellow{
+        width:200px;
+        height:200px;
+        background-color:rgba(224, 216, 24, 0.4);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        display: none;
+      }
+      .img2{
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <img src="./image/jd-1.jpg" alt="">
+      <div class="yellow">
+
+      </div>
+    </div>
+
+    <div class="magnify">
+      <div class="img2">
+      <img src="./image/jd-2.jpg" alt="">
+      </div>
+    </div>
+    <script type="text/javascript">
+      var img = document.getElementsByClassName('img')[0];
+      var yellow = document.getElementsByClassName('yellow')[0];
+      var magnify = document.getElementsByClassName('magnify')[0];
+      var img2 = magnify.children[0];
+      img.addEventListener('mousemove',function(event){
+        event.stopPropagation();
+
+
+        if((event.pageX >= 100) && ( event.pageX <= 250)){
+          yellow.style.left = event.pageX - 100 + 'px';
+          img2.style.left =  '-'+yellow.offsetLeft*2 + 'px';
+          console.log(yellow.offsetLeft);
+        }
+        if((event.pageY >= 100) &&( event.pageY <= 250)){
+          yellow.style.top = event.pageY - 100 + 'px';
+          img2.style.top =   '-'+yellow.offsetTop*2 +'px';
+          console.log(yellow.offsetTop);
+        }
+
+        // yellow.style.left = event.pageX - 100 + 'px';
+        // yellow.style.top = event.pageY - 100 + 'px';
+        // if((yellow.offsetLeft >= 0) && ( yellow.offsetLeft <= 150)){
+        //
+        //   img2.style.left =  '-'+yellow.offsetLeft*2 + 'px';
+        //   console.log(yellow.offsetLeft);
+        // }
+        // if((yellow.offsetTop >= 0) &&( yellow.offsetTop <= 150)){
+        //
+        //   img2.style.top =   '-'+yellow.offsetTop*2 +'px';
+        //   console.log(yellow.offsetTop);
+        // }
+
+
+      },false);
+      img.addEventListener('mouseover',function(){
+        yellow.style.display = 'block';
+        magnify.style.display = 'block';
+      })
+      img.addEventListener('mouseout',function(){
+        yellow.style.display = 'none';
+        magnify.style.display = 'none';
+      })
+
+    </script>
+  </body>
+</html>

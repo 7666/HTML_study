@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>判断一个数是否是2的n次方</title>
+  </head>
+  <body>
+    <script>
+      function fun(num){
+        while(true){
+          yu = num % 2;
+          num = num / 2;
+          if(yu != 0){
+            return false;
+          }
+          if(num == 2){
+            return true;
+          }
+        }
+      }
+
+      console.log(fun(16));
+    </script>
+  </body>
+</html>

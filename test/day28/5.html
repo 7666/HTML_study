@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Person(name, age){
+        this.name = name;
+        this.age = age;
+      }
+      Person.prototype.arm = 'two';
+
+      function Student(name, age, score){
+        this.name = name;
+        this.age = age;
+      }
+
+      Student.prototype = new Person();//新产生的Person对象赋给Student的原型,必然新产生的对象有啥,其Student的原型就有啥.原型是对象共有的.
+      //但是有一个问题就是新产生的Person对象也是有原型的啊,其原型里面的构造器指向的可不是Student啊,所以就有下面的一行代码,将构造器重定向.
+      Student.prototype.constructor = Student;
+      //上面两行代码就实现了Student继承Person
+
+      Student.prototype.hobbys = ['eat', 'drink', 'play', 'happy'];//注意子的共有属性必然不能定义在继承函数之前,不然就会被继承函数覆盖.
+
+      //试一下是否可以
+      var stu = new Student('kai', 18, 99);
+      console.log(stu.arm);//kai
+      console.log(stu.hobbys);//["eat", "drink", "play", "happy"]
+
+    </script>
+
+  </body>
+</html>

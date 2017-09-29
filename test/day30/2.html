@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="text" name="" value="">
+    <button type="button" name="button">OK</button>
+    <script type="text/javascript">
+      var btn = document.getElementsByTagName('button')[0];
+      var input = document.getElementsByTagName('input')[0];
+
+      function sum(num, num2){
+        return num + num2;
+      }
+      function pow2(arg){
+        return arg * arg;
+      }
+
+
+      function sumPow(num, num2){
+        return pow2(sum(num, num2));
+      }
+
+      var result = sumPow(2, 3);
+
+      console.log(result);
+    </script>
+  </body>
+</html>

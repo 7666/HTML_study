@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>closure</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function fun(cla){
+        var cla = {};
+        function add(stu,score){
+          cla.stu = score;
+        }
+        function get(stu){
+          return cla.stu;
+        }
+        return [add, get];
+      }
+
+      var clas = fun('yuwen');
+      var addstu = clas[0];
+      var query = clas[1];
+      addstu('wangkai', 88);
+      console.log(query('wangkai'));
+    </script>
+
+  </body>
+</html>

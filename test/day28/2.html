@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //使用构造函数来创建对象(批量创建)
+
+    //创建一个构造函数,构造函数一般是以大写字母开头
+      function Person(name, age){
+        this.name = name;
+        this.age = age;
+        this.getname = function(){
+          return this.name;
+        }
+        this.getage = function(){
+          return this.age;
+        }
+      }
+      //接下来就是用这个构造函数创建一个对象
+      var kai = new Person('wangkai', 24);//必须用new创建新的对象,不然其this指向的是window
+      console.log(kai);
+    </script>
+
+  </body>
+</html>

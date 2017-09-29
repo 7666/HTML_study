@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var day = new Date();//现在时间 为2017-9-20
+      console.log(day.getYear());//117 getYear返回的是距1900年1月1日的年份
+      console.log(day.getFullYear());//2017 getFullYear返回的是公元年份
+      console.log(day.getMonth());//8 返回的是月份-1,因为月份是0-11.
+      console.log(day.getDate());//20 返回这个月的第几天
+      console.log(day.getDay());//3 返回这个星期的第几天,星期日为0
+      console.log(day.getMinutes());//20 返回分钟数
+      console.log(day.getSeconds());//59 返回秒数
+      console.log(day.getMilliseconds());//389 返回毫秒数
+      console.log(day.getTime());//1505910059389 返回累计毫秒数(从1970/1/1午夜)
+    </script>
+
+  </body>
+</html>

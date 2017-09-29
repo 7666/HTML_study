@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>count</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function count(){
+        var count = 50;
+        function add(){
+          count++;
+        }
+        function red(){
+          count--;
+        }
+        function get(){
+          return count;
+        }
+        return [add, red, get];
+      }
+
+      var stucount = count();
+      var addstu = stucount[0];
+      var redstu = stucount[1];
+      var getstu = stucount[2];
+      addstu();
+      addstu();
+      redstu();
+      console.log(getstu()); 
+    </script>
+  </body>
+</html>

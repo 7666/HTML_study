@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>生成表格</title>
+  </head>
+  <body>
+    <button type="button" name="button">生成表格</button>
+    <table class='stu'>
+      <caption>人才信息</caption>
+      <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>score</th>
+      </tr>
+    </table>
+
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script>
+      $('button').click(function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('post','http://127.0.0.1:8000/table', true);
+
+        xhr.onreadystatechange = function() {
+         if (xhr.readyState === 4) {
+           if ((xhr.status >= 200) && (xhr.status < 400)) {
+             //xhr.response数据
+
+             //json的解析(将字符串解析为json)
+             var data = JSON.parse(xhr.response);
+             var stus = data.stus;//数组
+
+             //对接收的服务端数据进行拆解显示
+
+             //生成表格
+             for (var i = 0; i < stus.length; i++) {
+               $(".stu tbody").append("<tr><td>" + stus[i].name + "</td><td>" + stus[i].age + "</td></td>" + stus[i].score + "</td></tr>");
+             }
+
+           } else {
+           }
+         }
+       };
+
+       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       xhr.send();
+     });
+    </script>
+
+  </body>
+</html>

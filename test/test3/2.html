@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function deepclone(obj){
+        var o = {};
+        for(var k in obj){
+          var copy = obj[k];
+          o[k]=arguments.callee(copy);
+        }
+        return o;
+      }
+      var k = {'key':1};
+      var kk = deepclone(k);
+      kk.key = 2;
+      console.log(kk);
+      console.log(k);
+    </script>
+  </body>
+</html>

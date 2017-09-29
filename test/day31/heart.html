@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>heart</title>
+    <style media="screen">
+      *{
+        padding: 0px;
+        margin: 0px;
+      }
+      .heart{
+        position: relative;
+      }
+      .container{
+        height:380px;
+        background: url(./image/heart_beat/bo.png)  0px center repeat-x,url(./image/heart_beat/search-bg.png);
+        width:14000000000px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .yellow{
+        height: 380px;
+        width: 100px;
+        background-image: url(./image/heart_beat/yellow-line.png);
+        background-repeat: repeat-x;
+        background-position: 0px center ;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart">
+
+
+    <div class="container">
+      <div class="yellow">
+      </div>
+
+    </div>
+    </div>
+    <script type="text/javascript">
+      var heart = document.getElementsByClassName('heart')[0];
+      var container = document.getElementsByClassName('container')[0];
+      var yellow = document.getElementsByClassName('yellow')[0];
+      var timer;
+      // heart.style.width = window.innerWidth;
+
+      timer = setInterval(function(){
+        container.style.left =  container.offsetLeft - 1 + 'px';
+        yellow.style.left = yellow.offsetLeft + 10 + 'px';
+        if(-yellow.offsetLeft <= (container.offsetLeft-window.innerWidth)){
+          yellow.style.left = -container.offsetLeft + 'px';
+
+        }
+        yellow.style.backgroundPosition = '-'+yellow.offsetLeft+ 'px' + ' '+ 'center';
+      },20);
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Person(name, age){
+      this.name = name;
+      this.age = age;
+      this.getname = function(){
+        return this.name;
+      }
+      this.getage = function(){
+        return this.age;
+      }
+    }
+
+    Person.prototype.leg = 'two';
+    Person.prototype.arm = 'two';
+
+    // var kai = new Person('wang', 18);
+    // console.log(kai.leg);
+    // console.log(kai.getname());
+
+    function Student(name, age, score){
+      this.name = name;
+      this.age  = age;
+      this.score = score;
+    }
+    Student.prototype = new Person();
+    Student.prototype.constructor = Student;
+
+    var kai = new Student(kai, 18, 66);
+    console.log(kai.getname());
+    console.log(kai.leg);
+    kai.leg = 'three';
+    console.log(kai.leg);
+    var wang = new Student(wang, 19, 99);
+    console.log(wang.leg);
+    </script>
+
+  </body>
+</html>

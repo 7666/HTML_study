@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function ru(arg){
+        var a = [];
+        for (let i = 0; i < arguments.length; i++) {
+          a.push(arguments[i]);
+        }
+
+        function chu(num){
+          var b = [];
+          for (let i = 0; i < num; i++) {
+            b[i] = a.shift()
+          }
+          return b;
+
+        }
+        return chu;
+      }
+
+      var ruu = ru(1,2,3,4,5,6);
+      console.log(ruu(3));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      span{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="name" rows="8" cols="80"></textarea>
+    <button type="button" name="button">OK</button>
+    <script src="./jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    $('button').on('click',function(){
+      var p =  document.createElement('div');
+      str = '<font><b>abcde</b></font>';
+      p.innerHTML = str;
+      console.log(p);
+      var input = document.getElementsByTagName('textarea')[0];
+      console.log(input);
+      input.appendChild(p);
+    })
+    </script>
+  </body>
+</html>

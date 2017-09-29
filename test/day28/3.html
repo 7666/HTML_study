@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Person(){
+      }
+      Person.prototype.eat = function(){
+        console.log('wakaka.....');
+      }
+      Person.prototype.name = 'kai';
+
+      var one = new Person();
+      var two = new Person();
+      console.log(one.name);//kai
+      console.log(two.name);//kai
+    </script>
+  </body>
+</html>
