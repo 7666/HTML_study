@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>图片延迟加载</title>
+
+    <style media="screen">
+      html,body{
+        height: 100%;
+      }
+      .one,.two,.three{
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <img src="./img/11.jpg" alt="" url="./img/11.jpg">
+    </div>
+    <div class="two">
+      <img src="#" alt="" url="./img/22.jpg" >
+    </div>
+    <div class="three">
+      <img src="#" alt="" url="./img/33.jpg">
+    </div>
+    <script type="text/javascript">
+    var img1 = document.querySelectorAll('img')[0];
+    var img2 = document.querySelectorAll('img')[1];
+    var img3 = document.querySelectorAll('img')[2];
+
+      window.onscroll = function(e){
+        var scrollTop = document.body.scrollTop;
+        var screenHeight = window.screen.height;
+        if(scrollTop>100){
+          img2.src = img2.getAttribute('url');
+        }
+
+        if(scrollTop>screenHeight){
+          img3.src = img3.getAttribute('url');
+        }
+      }
+    </script>
+  </body>
+</html>

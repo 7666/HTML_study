@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <script>
+      var can = document.getElementById('canvas');
+      var canvas = can.getContext('2d');
+
+      for (var  i = 0; i <= 1000 ; i+=20) {
+        canvas.beginPath();
+        canvas.moveTo(i,0);
+        canvas.lineTo(i,1000);
+        canvas.stroke();
+        canvas.beginPath();
+        canvas.moveTo(0,i);
+        canvas.lineTo(1000,i);
+        canvas.stroke();
+      }
+      canvas.beginPath();
+      canvas.moveTo(100,800);
+      canvas.lineTo(900,800);
+      canvas.lineTo(880,780);
+      canvas.strokeStyle = "red";
+      canvas.lineWidth = 5;
+      canvas.stroke();
+      canvas.beginPath();
+      canvas.moveTo(900,800);
+      canvas.lineTo(880,820);
+      canvas.strokeStyle = "red";
+      canvas.lineWidth = 5;
+      canvas.stroke();
+
+      canvas.beginPath();
+      canvas.moveTo(100,800);
+      canvas.lineTo(100,100);
+      canvas.lineTo(80,120);
+      canvas.strokeStyle = "red";
+      canvas.lineWidth = 5;
+      canvas.stroke();
+      canvas.beginPath();
+      canvas.moveTo(100,100);
+      canvas.lineTo(120,120);
+      canvas.strokeStyle = "red";
+      canvas.lineWidth = 5;
+      canvas.stroke();
+
+      canvas.beginPath();
+      canvas.moveTo(100, 800);
+      canvas.lineTo(140, 700);
+      canvas.lineTo(180, 600);
+      canvas.lineTo(220, 550);
+      canvas.lineTo(240, 600);
+      canvas.lineTo(280, 500);
+      canvas.lineTo(320, 600);
+      canvas.lineTo(360, 400);
+      canvas.lineTo(400, 700);
+      canvas.lineTo(440, 300);
+      canvas.lineTo(480, 500);
+      canvas.lineTo(520, 400);
+      canvas.lineTo(560, 650);
+      canvas.lineTo(600, 340);
+      canvas.lineTo(640, 540);
+      canvas.lineTo(680, 640);
+      canvas.lineTo(720, 220);
+      canvas.lineTo(740, 120);
+      canvas.strokeStyle = "blue";
+      canvas.lineWidth = 5;
+      canvas.stroke();
+
+
+    </script>
+  </body>
+</html>

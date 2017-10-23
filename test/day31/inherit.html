@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>inherit</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Parent(name, age){
+        this.name = name;
+        this.age = age;
+      }
+      Parent.prototype.sayHello = function(){
+        console.log('hello');
+      }
+
+      function Son(name, age, score){
+        Parent.call(this,name,age);
+        this.score = score;
+      }
+
+      function Inherit(Parent, Son){
+        function F(){};
+        F.prototype = Parent.prototype;
+        Son.prototype = new F();
+        Son.prototype.constructor = Son;
+      }
+      Inherit(Parent, Son);
+      result = new Son(1,2,3);
+      result.sayHello();
+      console.log(result);
+    </script>
+  </body>
+</html>

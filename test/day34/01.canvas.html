@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>饼图</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <script type="text/javascript">
+      var can = document.getElementById('canvas');
+      var c = can.getContext('2d');
+
+      c.beginPath();
+      c.moveTo(400, 400);
+      c.arc(400, 400,100, 0, Math.PI * 0.1,false);
+      c.font = '50px 宋体';
+      c.fillStyle = 'yellow';
+      c.fill();
+      c.fillText('5%', 520,450);
+
+
+
+      c.beginPath();
+      c.moveTo(400, 400);
+      c.arc(400, 400,100, Math.PI *0.1, Math.PI * 0.4,false);
+      c.fillStyle = 'blue';
+      c.fill();
+      c.font = '50px 宋体';
+      c.fillText('15%', 480,500);
+
+
+      c.beginPath();
+      c.moveTo(400, 400);
+      c.arc(400, 400,100, Math.PI * 0.4, Math.PI * 0.8,false);
+      c.fillStyle = 'lightgreen';
+      c.fill();
+      c.font = '50px 宋体';
+      c.fillText('20%', 300,530);
+
+      c.beginPath();
+      c.moveTo(400, 400);
+      c.arc(400, 400,100, Math.PI * 0.8, Math.PI * 1.3,false);
+      c.fillStyle = 'gold';
+      c.fill();
+      c.font = '50px 宋体';
+      c.fillText('25%', 200,400);
+
+      c.beginPath();
+      c.moveTo(400, 400);
+      c.arc(400, 400,100, Math.PI * 1.3, Math.PI * 1.5,false);
+      c.fillStyle = 'lightblue';
+      c.fill();
+      c.font = '50px 宋体';
+      c.fillText('10%', 290,300);
+
+      c.beginPath();
+      c.moveTo(400, 400);
+      c.arc(400, 400,100, Math.PI * 1.5, Math.PI * 2,false);
+      c.fillStyle = 'gray';
+      c.fill();
+      c.font = '50px 宋体';
+      c.fillText('25%', 450,300);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>slay.one</title>
+    <style media="screen">
+      .one{
+        width:1000px;
+        height:500px;
+        margin: 10px auto;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+
+      <iframe id='frame' src='http://slay.one' style="width:100%;height:100%;"></iframe>
+      <button type="button" name="button">全屏</button>
+    </div>
+
+    <script type="text/javascript">
+      var btn = document.querySelector('button');
+      var frame = document.querySelector('#frame');
+      var one = document.querySelector('.one');
+      function fullScreen(elem){
+        if(elem.requestFullscreen){
+          elem.requestFullscreen();
+        }else if(elem.webkitRequestFullscreen){
+          elem.webkitRequestFullscreen();
+        }else if(elem.mozRequestFullScreen){
+          elem.mozRequestFullScreen();
+        }
+      }
+      btn.onclick = function(){
+        fullScreen(frame);
+      }
+
+    </script>
+
+  </body>
+</html>

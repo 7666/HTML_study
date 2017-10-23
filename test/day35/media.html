@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>media</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+      video{
+        display: block;
+        margin: 20px auto;
+      }
+      html,body{
+        height: 100%;
+      }
+      .controls{
+        background-color: #eee;
+        position: relative;
+        height: 100%;
+      }
+      .spaceBar{
+        width:350px;
+        height: 15px;
+        float: left;
+        background: #eee;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        bottom: 45px;
+        margin-left: 20px;
+      }
+      .bar{
+        width: 0px;
+        height: 15px;
+        background: lightblue;
+        border-radius:5px;
+      }
+      .con{
+        margin: 0px auto;
+        height: 75px;
+        width: 500px;
+        position:relative;
+        font-size: 25px;
+        background: rgba(141, 223, 161, 0.53);
+        border-radius: 10px;
+      }
+      #time{
+        position: absolute;
+        right:10px;
+        bottom: 40px;
+      }
+      #play{
+        position: absolute;
+        left:20px;
+        bottom: 10px;
+      }
+      #voice{
+        position: absolute;
+        left:50px;
+        bottom: 10px;
+      }
+      #voiceChange{
+        position: absolute;
+        left:80px;
+        bottom: 10px;
+      }
+      #fast{
+        position: absolute;
+        left:220px;
+        bottom: 10px;
+      }
+      #slow{
+        position: absolute;
+        left: 270px;
+        bottom: 10px;
+      }
+      #speed{
+        position: absolute;
+        left: 320px;
+        bottom: 10px;
+      }
+      #speedCut{
+        position: absolute;
+        left: 360px;
+        bottom: 10px;
+      }
+      #expand{
+        position: absolute;
+        left: 460px;
+        bottom: 10px;
+      }
+      #compass{
+        position: absolute;
+        left: 410px;
+        bottom: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <video id="video"   poster="./poster.jpg" width="500" height="300px">
+        <!-- <source src="./video/chrome.ogv" > -->
+        <source src="./video/trailer.mp4" >
+      </video>
+      <div class="con">
+      <div class='spaceBar'>
+        <div class='bar'></div>
+      </div>
+      <span id="time"><span>0:0</span>/<span></span></span><br>
+      <span id="play"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+      <span id="voice"><i class="fa fa-volume-down" aria-hidden="true"></i></span>
+      <input id="voiceChange" type="range" min="0" max='1.0' step="0.1" value="1.0">
+      <span id="fast"><i class="fa fa-fast-forward" aria-hidden="true"></i></span>
+      <span id='slow'><i class="fa fa-fast-backward" aria-hidden="true"></i></span>
+      <span id="speed"><i class="fa fa-forward" aria-hidden="true"></i></span>
+      <span id="speedCut"><i class="fa fa-backward" aria-hidden="true"></i></span>
+      <span id="compass"><i class="fa fa-compass" aria-hidden="true"></i></span>
+      <span id="expand"><i class="fa fa-arrows-alt" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    <div id="light" style="font-size:50px;position:fixed;right:500px;top:200px;">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+    </div>
+
+    <script type="text/javascript">
+      // var btn1 = document.getElementsByTagName('button')[0];
+      // var btn2 = document.getElementsByTagName('button')[1];
+      // var btn3 = document.getElementsByTagName('button')[2];
+      // var btn4 = document.getElementsByTagName('button')[3];
+      // var btn5 = document.getElementsByTagName('button')[4];
+      var play = document.getElementById('play');
+      var voice = document.getElementById('voice');
+      var video = document.getElementById("video");
+      var voiceChange = document.getElementById('voiceChange');
+      var time = document.getElementById("time");
+      var currentTime = time.firstElementChild;
+      var duration = time.lastElementChild;
+      var fast = document.getElementById('fast');
+      var slow = document.getElementById('slow');
+      var speed = document.getElementById('speed');
+      var speedCut = document.getElementById('speedCut');
+      var bar =document.getElementsByClassName('bar')[0];
+      var spaceBar = document.getElementsByClassName('spaceBar')[0];
+      var expand = document.getElementById("expand");
+      var compass = document.getElementById('compass');
+      var light = document.getElementById('light');
+      var controls = document.getElementsByClassName('controls')[0];
+      var light = document.getElementById('light');
+      var videoTime;
+
+      video.addEventListener('loadedmetadata',function(){
+        videoTime = parseInt(video.duration);
+        var minutes = parseInt(videoTime/60);
+        var seconds = videoTime%60;
+        duration.innerHTML = minutes +':'+seconds;
+      });
+      voice.onclick = function(){
+        video.muted = video.muted ? false : true;
+        if(video.muted){
+          voice.innerHTML = '<i class="fa fa-volume-off" aria-hidden="true"></i>';
+        }else{
+          voice.innerHTML = '<i class="fa fa-volume-down" aria-hidden="true">';
+        }
+      }
+      voiceChange.onchange = function(){
+        var sound = voiceChange.value;
+        video.volume = sound;
+        if(sound){
+          voice.innerHTML = '<i class="fa fa-volume-off" aria-hidden="true"></i>';
+        }
+        if(sound != 0){
+          voice.innerHTML = '<i class="fa fa-volume-down" aria-hidden="true">';
+        }
+      };
+      fast.onclick = function(){
+        video.currentTime += 5;
+        console.log(11);
+      };
+      slow.onclick = function(){
+        video.currentTime -= 5
+      };
+      play.onclick = function(){
+      video.play();
+      play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+    };
+      video.addEventListener('pause',function(){
+        play.onclick = function(){
+        video.play();
+        play.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+      };
+    });
+      video.addEventListener('play',function(){
+        play.onclick = function(){
+        video.pause();
+        play.innerHTML = '<i class="fa fa-play-circle-o" aria-hidden="true"></i>';
+      };
+    });
+
+
+      speed.onclick = function(){
+        if (video.playbackRate < 4) {
+          video.playbackRate +=1;
+        }
+      };
+      speedCut.onclick = function(){
+        if (video.playbackRate > 0.5) {
+          video.playbackRate -=0.1;
+        }
+      };
+      // video.ontimeupdate = function(){
+      // var currTime = this.currentTime,    //当前播放时间
+      // duration = this.duration;       // 视频总时长
+      // //百分比
+      // var pre = currTime / duration * 100 + "%";
+      // //显示进度条
+      // // loaded.style.width = pre;
+      //
+      //  //显示当前播放进度时间
+      // currPlayTime.innerHTML = getFormatTime(currTime);
+      // };
+      video.ontimeupdate = function(){
+        var Time = parseInt(video.currentTime);
+        var minutes = parseInt(Time/60);
+        var seconds = Time%60;
+        currentTime.innerHTML = minutes +':'+seconds;
+        var width = 350*(Time/videoTime);
+        bar.style.width = width + 'px';
+      }
+      spaceBar.onclick = function(event){
+        var x = event.pageX - this.offsetLeft - this.offsetParent.offsetLeft - this.offsetParent.offsetParent.offsetLeft;
+        // var y = evetn.pageY - this.offsetTop;
+        console.log(this.offsetParent.offsetLeft);
+        console.log(event.pageX);
+        console.log(x);
+        console.log(this.offsetWidth);
+        console.log(video.duration);
+        video.currentTime = (x / this.offsetWidth) * video.duration;
+      };
+      expand.onclick = function(){
+         video.webkitRequestFullScreen();
+      };
+      compass.onclick = function(){
+        video.playbackRate = 1;
+      }
+      light.onclick = function(){
+        console.log(window.getComputedStyle(controls,null).backgroundColor);
+        if (window.getComputedStyle(controls,null).backgroundColor == "rgb(238, 238, 238)") {
+          controls.style.backgroundColor = '#008080';
+          this.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>';
+        }else{
+          controls.style.backgroundColor = '#eee';
+          this.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>';
+        }
+      }
+    </script>
+
+  </body>
+</html>

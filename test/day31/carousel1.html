@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>carousel</title>
+    <link rel="stylesheet" href="./image/iconfont.css">
+    <style media="screen">
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      img{
+        width:1024px;
+        height: 768px;
+      }
+      .box{
+        width:1024px;
+        height:768px;
+        overflow: hidden;
+        margin: 20px auto;
+      }
+      .left,.right{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .left{
+        left: 450px;
+      }
+      .right{
+        right: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="img">
+        <div>
+          <img src="./image/11.jpg" alt="">
+        </div>
+        <div >
+          <img src="./image/22.jpg" alt="">
+        </div>
+        <div>
+          <img src="./image/33.jpg" alt="">
+        </div>
+        <div>
+          <img src="./image/44.jpg" alt="">
+        </div>
+        <div>
+          <img src="./image/55.jpg" alt="">
+        </div>
+      </div>
+      <div class="left">
+        <i class="iconfont icon-lunbozuo"></i>
+      </div>
+      <div class="right">
+        <i class="iconfont icon-lunboyou"></i>
+      </div>
+    </div>
+    <script src="./image/iconfont.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var box = document.getElementsByClassName('box')[0];
+      var left = document.getElementsByClassName('left')[0];
+      var right = document.getElementsByClassName('right')[0];
+      // box.scrollTop = 768;
+      var scroll;
+      function add(){
+        scroll = box.scrollTop;
+        scroll+=771;
+        if(scroll == 3855){
+          scroll = 0;
+        }
+        if(scroll < 0){
+          scroll = 3084;
+        }
+
+        box.scrollTop = scroll;
+      }
+      var timer = setInterval(add,2000);
+      right.onclick = function(){
+        clearInterval(timer);
+        scroll+=771;
+
+        if(scroll == 3855){
+          scroll = 0;
+        }
+        if(scroll < 0){
+          scroll = 3084;
+        }
+        box.scrollTop = scroll;
+        timer = setInterval(add,2000);
+      }
+      left.onclick = function(){
+        clearInterval(timer);
+        scroll-=771;
+        if(scroll == 3855){
+          scroll = 0;
+        }
+        if(scroll < 0){
+          scroll = 3084;
+        }
+        box.scrollTop = scroll;
+        timer = setInterval(add,2000);
+      }
+    </script>
+  </body>
+</html>

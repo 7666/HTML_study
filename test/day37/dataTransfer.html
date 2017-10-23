@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .ball{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: lightblue;
+      }
+      .box{
+        width: 100%;
+        height: 500px;
+        border: 1px solid lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="ball">
+      1111111
+    </div>
+    <div class="ball">
+      2222222222
+    </div>
+    <div class="box">
+
+    </div>
+    <script type="text/javascript">
+    var ball = document.querySelectorAll('.ball');
+    var box = document.querySelector('.box');
+
+      document.addEventListener('DOMContentLoaded',function(){
+        console.log(111);
+
+        document.addEventListener('selectstart',function(event){
+          event.preventDefault();
+        })
+
+        for(let i = 0 ;i< ball.length;i++){
+            console.log(i);
+            ball[i].setAttribute('draggable','true');
+          ball[i].addEventListener('dragstart',function(event){
+            event.dataTransfer.setData('index',i);
+            console.log(this.index);
+          })
+          box.addEventListener('dragover',function(event){
+            event.stopPropagation();
+            event.preventDefault();
+          });
+          box.addEventListener('drop',function(event){
+            var index = event.dataTransfer.getData('index');
+            console.log(index);
+            box.appendChild(ball[index]);
+          })
+        }
+      },false)
+    </script>
+  </body>
+</html>

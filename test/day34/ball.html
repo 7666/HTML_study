@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ball</title>
+    <style media="screen">
+      canvas{
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+
+  </body>
+  <script>
+    var can = document.getElementById('canvas');
+    var c = can.getContext('2d');
+
+    for (let i = 0; i < 10; i++) {
+      var x = Math.floor((Math.random()*189)+300);
+      var y = Math.floor((Math.random()*189)+300);
+      var r = Math.floor(Math.random()*255);
+      var g = Math.floor(Math.random()*255);
+      var b = Math.floor(Math.random()*255);
+      c.beginPath();
+      c.fillStyle = 'rgb('+r+','+g+','+b+')';
+      c.arc(x, y, 10, 0, Math.PI*2,false);
+      c.fill();
+      console.log(Math.random(10));
+      (function(y){
+        setInterval(function(){
+          can.width = can.width;
+          // console.log(111);
+          y+=10;
+          console.log(y);
+          c.fillStyle = 'red';
+          c.arc(x, y, 10, 0, Math.PI*2,false);
+          c.fill();
+          // if(y==800){
+          //   y--;
+          // }
+        },20);
+      })(i);
+
+    }
+
+  </script>
+</html>

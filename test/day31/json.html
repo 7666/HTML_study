@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>json</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var result = {
+        'name':'wangkai',
+        'age': 29,
+        'love': null,
+        'student': false
+      }
+
+      var ko = JSON.stringify(result);
+      console.log(ko);
+      var ok = JSON.parse(ko);
+      console.log(ok);
+    </script>
+  </body>
+</html>

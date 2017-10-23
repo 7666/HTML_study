@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>两栏布局</title>
+    <style media="screen">
+      .one-left{
+        float:left;
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+      }
+      .one-right{
+        margin-left: 200px;
+        height:200px;
+        background-color: lightgreen;
+      }
+      .two{
+        position: relative;
+      }
+      .two-left{
+        width:200px;
+        height:200px;
+        background-color: red;
+      }
+      .two-right{
+        position: absolute;
+        left: 200px;
+        right: 0;
+        top:0;
+        height: 200px;
+        background: blue;
+      }
+      .three{
+        display: flex;
+      }
+      .three-left{
+        width: 200px;
+        height: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        background-color: yellow;
+      }
+      .three-right{
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <div class="one-left">
+
+      </div>
+      <div class="one-right">
+
+      </div>
+
+    </div>
+    <div class="two">
+      <div class="two-left">
+
+      </div>
+      <div class="two-right">
+
+      </div>
+
+    </div>
+    <div class="three">
+      <div class="three-left">
+
+      </div>
+      <div class="three-right">
+
+      </div>
+
+    </div>
+  </body>
+</html>

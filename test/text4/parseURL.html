@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>解析URL</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var url = 'http://www.domain.com/?user=anonymous&id=123&id=456&city=BeiJing&enable=';
+
+      var obj = {};
+      var list = [];
+
+      url.replace(/(\w+)=(\w*)/gi,function(match,p1,p2,str){
+
+        if(Number(p2)){
+          p2 = Number(p2);
+        }
+        if(obj[p1] == undefined){
+          if(!p2){
+            obj[p1] = true;
+          }else{
+            obj[p1] = p2;
+          }
+        }else{
+          var l = [];
+          l.push(obj[p1]);
+          l.push(p2);
+          obj[p1] = l;
+        }
+
+      });
+
+
+      console.log(obj);
+      </script>
+
+  </body>
+</html>

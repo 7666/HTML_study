@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>offset</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .box{
+        width: 300px;
+        height: 200px;
+        border: 1px solid #666;
+        margin: 20px auto;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="s-box">
+
+      </div>
+    </div>
+    <script>
+      var box = document.getElementsByClassName('box')[0];
+      console.log(box.offsetHeight);//262
+      console.log(box.offsetWidth);//362
+      console.log(box.offsetLeft);//744
+      console.log(box.offsetTop);//20
+      console.log(box.offsetParent);
+    </script>
+  </body>
+</html>

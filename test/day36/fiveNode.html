@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>fiveNode</title>
+    <style media="screen">
+      .box > div{
+        width:500px;
+        height:100px;
+        margin: 10px auto;
+      }
+      .b1{
+        background-color: red;
+      }
+      .b2{
+        background-color: blue;
+      }
+      .b3{
+        background-color: yellow;
+      }
+      .b4{
+        background-color: green;
+      }
+      .b5{
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="b1" draggable="true">
+        111
+      </div>
+      <div class="b2" draggable="true">
+        222
+      </div>
+      <div class="b3" draggable="true">
+        333
+      </div>
+      <div class="b4" draggable="true">
+        444
+      </div>
+      <div class="b5" draggable="true">
+        555
+      </div>
+
+    </div>
+    <script type="text/javascript">
+
+        function time(){
+          var box = document.querySelector('.box');
+          var boxSon = document.querySelectorAll('.box > div');
+          var target;
+          for (let i = 0; i < boxSon.length; i++) {
+          boxSon[i].addEventListener('drag',function(){
+            target = i;
+          },false);
+
+          boxSon[i].addEventListener('dragover',function(event){
+              event.stopPropagation();
+              event.preventDefault();
+          },false);
+
+          boxSon[i].addEventListener('drop',function(){
+            if(target>i){
+              box.insertBefore(boxSon[target],boxSon[i]);
+            }
+            if(target<i){
+              box.insertBefore(boxSon[target],boxSon[i+1]);
+            }
+          },false);
+        }}
+
+        setInterval(time,100);
+
+
+
+    </script>
+  </body>
+</html>

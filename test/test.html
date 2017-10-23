@@ -2,35 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test</title>
-    <style media="screen">
-    .a{
-      width: 1000px;
-      border:solid red 2px;
-      float: left;
-    }
-    .b{
-      width:500px;
-      border:solid red 2px;
-      float:left;
-    }
-    .b p{
-      position: relative;
-      top: 1px;
-    }
+    <title>两栏布局</title>
+    <style>
+     .a1{
+       width:200px;
+       height: 100px;
+       background: red;
+       float: left;
+     }
+     .a2{
+       height: 100px;
+
+       margin-left: 200px;
+       background: blue;
+     }
+     /*让a1脱离标准流,不在单独占一行,a1没有占位置,那么a2就会到a1的位置单独占一行,用margin把a1的位置空出来.*/
 
     </style>
   </head>
   <body>
     <div class="a">
-      <p>
-        djisojfiojosiajdiojoijsaijdijsjadojisjiodjisaj
-      </p>
-    </div>
-    <div class="b">
-    <p>fidsjifjidsjfjdsjfdijsoifjoirjfgoirjoijfogjdsiofjiodsjiofjdoisjfijdsoijfgidjsiodf覅偶电视剧佛我减掉手机覅偶觉得死哦及覅偶见地价佛我激动我及覅偶降低偶手机覅偶觉得死哦及覅偶记11fj</p>
-    </div>
+      <div class="a1">
 
+      </div>
+      <div class="a2">
 
+      </div>
+    </div>
   </body>
 </html>

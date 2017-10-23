@@ -62,16 +62,25 @@
       img.addEventListener('mousemove',function(event){
         event.stopPropagation();
 
-
-        if((event.pageX >= 100) && ( event.pageX <= 250)){
-          yellow.style.left = event.pageX - 100 + 'px';
-          img2.style.left =  '-'+yellow.offsetLeft*2 + 'px';
-          console.log(yellow.offsetLeft);
+        var x = event.pageX - yellow.offsetWidth/2 - img.offsetLeft;
+        var y = event.pageY - yellow.offsetHeight/2 - img.offsetTop;
+        if(x<=0){
+          yellow.style.left = 0 + 'px';
+        }else if (event.pageX >= img.offsetWidth - yellow.offsetWidth/2) {
+          yellow.style.left = img.offsetWidth - yellow.offsetWidth + 'px';
+        }else{
+          yellow.style.left = x + 'px';
+          img2.style.left = -yellow.offsetLeft*2.2 + 'px';
         }
-        if((event.pageY >= 100) &&( event.pageY <= 250)){
-          yellow.style.top = event.pageY - 100 + 'px';
-          img2.style.top =   '-'+yellow.offsetTop*2 +'px';
-          console.log(yellow.offsetTop);
+        console.log(yellow.offsetHight);
+
+        if(y<=0){
+          yellow.style.top = 0 + 'px';
+        }else if (event.pageY >= img.offsetHeight - yellow.offsetHeight/2){
+          yellow.style.top = img.offsetHeight - yellow.offsetHeight + 'px';
+        }else{
+          yellow.style.top = y + 'px';
+          img2.style.top = -yellow.offsetTop*2.2 + 'px';
         }
 
         // yellow.style.left = event.pageX - 100 + 'px';

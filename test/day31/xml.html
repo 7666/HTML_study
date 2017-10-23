@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>xml</title>
+  </head>
+  <body>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    console.log("***************************jquery*************************");
+      //创建一个XML
+      var xmlstr = `<?xml version="1.0" encoding="UTF-8"?>
+      <student>
+        <name>lisan</name>
+        <age>18</age>
+      </student>`
+      //解析为DOM对象
+      var result = $.parseXML(xmlstr);
+      console.log(result);
+      //转换为jQuery对象
+      var jXML = $(result);
+      console.log(jXML);
+      //然后取出值
+      var student = jXML.find('student');
+      var name = student.find('name').text();
+      console.log(name)//lisan
+      console.log("********************js********************************");
+      //解析为DOM对象
+      var jsXML = (new DOMParser()).parseFromString(xmlstr, "application/xml");
+      //取出值
+      var nam = jsXML.getElementsByTagName('name')[0].innerHTML;
+      console.log(nam);//lisan
+    </script>
+  </body>
+</html>

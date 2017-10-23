@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>多屏滚动</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+      #nav{
+        position: fixed;
+        left: 100px;
+        top: 50%;
+        border: solid 1px #666;
+        transform: translateY(-50%);
+      }
+      #nav>div{
+        width:50px;
+        height:50px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+      }
+      #nav div:nth-of-type(1){
+        background-color: lightyellow;
+      }
+      #nav div:nth-of-type(2){
+        background-color: lightblue;
+      }
+      #nav div:nth-of-type(3){
+        background-color: lightgreen;
+      }
+      #nav div:nth-of-type(4){
+        background-color: gold;
+      }
+      #n1,#n2,#n3,#n4{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+      #n1{
+        background-color: lightyellow;
+      }
+      #n2{
+        background-color: lightblue;
+      }
+      #n3{
+        background-color: lightgreen;
+      }
+      #n4{
+        background-color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav">
+      <div class="nav1">
+        one
+      </div>
+      <div class="nav2">
+        two
+      </div>
+      <div class="nav3">
+        three
+      </div>
+      <div class="nav4">
+        four
+      </div>
+    </nav>
+    <div id="n1">
+      <h1>第1个页面</h1>
+    </div>
+    <div id="n2">
+
+      <h1>第2个页面</h1>
+    </div>
+    <div id="n3">
+
+      <h1>第3个页面</h1>
+    </div>
+    <div id="n4">
+
+      <h1>第4个页面</h1>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var timer;
+
+      function slowDown(target){
+        clearInterval(timer);
+        timer = setInterval(function(){
+          var now = $(window).scrollTop();
+          var step = (target - now)/20;
+          step = step > 0 ? Math.ceil(step) : Math.floor(step);
+          $(window).scrollTop(now + step);
+          if(target === $(window).scrollTop()){
+            clearInterval(timer)
+          }
+        },20)
+      }
+
+
+      $('.nav1').click(function(){
+
+        slowDown(0);
+      })
+      $('.nav2').click(function(){
+        var screen = $(window).height();
+        slowDown(screen);
+      })
+      $('.nav3').click(function(){
+        var screen = $(window).height();
+        slowDown(screen*2);
+      })
+      $('.nav4').click(function(){
+        var screen = $(window).height();
+        slowDown(screen*3);
+      })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>carousel轮播图</title>
+    <style media="screen">
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .carousel{
+        width:1024px;
+        height: 768px;
+        margin: 20px auto;
+        border: solid 1px #666;
+        position: relative;
+      }
+      .carousel>div:nth-of-type(1),
+      .carousel>div:nth-of-type(2),
+      .carousel>div:nth-of-type(3),
+      .carousel>div:nth-of-type(4),
+      .carousel>div:nth-of-type(5)
+      {
+        display: none;
+      }
+      .carousel>div.active{
+        display: block;
+      }
+      .ball>.active{
+        background-color: #000;
+      }
+      .ball{
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: 90px;
+      }
+      .ball>div{
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        border: 1px solid #666;
+        background-color: gold;
+        position: absolute;
+        bottom:20px;
+      }
+      .ball div:nth-child(1){
+        left:0px;
+      }
+      .ball div:nth-child(2){
+        left:20px;
+      }
+      .ball div:nth-child(3){
+        left:40px;
+      }
+      .ball div:nth-child(4){
+        left:60px;
+      }
+      .ball div:nth-child(5){
+        left:80px;
+      }
+      img{
+        width:1024px;
+        height:768px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="active">
+        <img src="./image/1.jpg" alt="">
+      </div>
+      <div>
+        <img src="./image/2.jpg" alt="">
+      </div>
+      <div>
+        <img src="./image/3.jpg" alt="">
+      </div>
+      <div>
+        <img src="./image/4.jpg" alt="">
+      </div>
+      <div>
+        <img src="./image/5.jpg" alt="">
+      </div>
+      <div class="ball">
+        <div class='active'>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div> <div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    function interval(){
+      var index1 = $('.ball > div').index($('.ball>.active'))+1;
+      if(index1 == 5){
+        index1=0;
+      }
+      index1 +=1;
+      $('.ball>.active').removeClass('active');
+      $('.carousel>div.active').removeClass('active');
+      $(".carousel>div:nth-of-type(" +index1 +")").addClass('active');
+      $('.ball>div:nth-of-type('+index1+')').addClass('active');
+    }
+    var timer = setInterval(interval,3000);
+    //   var timer;
+    // function outTime(){
+    //   clearTimeout(timer);
+    //   var index1 = $('.ball > div').index($('.ball>.active'))+1;
+    //   if(index1 == 5){
+    //     index1=0;
+    //   }
+    //   index1 +=1;
+    //   $('.ball>.active').removeClass('active');
+    //   $('.carousel>div.active').removeClass('active');
+    //   $(".carousel>div:nth-of-type(" +index1 +")").addClass('active');
+    //   $('.ball>div:nth-of-type('+index1+')').addClass('active');
+    //   timer = setTimeout(outTime,2000);
+    //   }
+    //   timer = setTimeout(outTime,2000);
+
+    $(".ball > div").click(function(){
+      $('.ball>.active').removeClass('active');
+      $(this).addClass('active');
+      $('.carousel>div.active').removeClass('active');
+      var index = $('.ball > div').index(this) + 1;
+      $(".carousel>div:nth-of-type(" +index +")").addClass('active');
+    });
+    $('.carousel').mouseover(function(){
+      clearInterval(timer);
+    })
+    $('.carousel').mouseout(function(){
+      clearInterval(timer);
+      timer = setInterval(interval, 3000);
+    })
+    </script>
+
+  </body>
+</html>
